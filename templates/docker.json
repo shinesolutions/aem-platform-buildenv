@@ -1,0 +1,46 @@
+{
+  "variables": {
+  },
+  "builders": [
+    {
+      "type": "docker",
+      "image": "centos:centos7",
+      "commit": true,
+      "run_command": [
+        "--privileged", "-e", "container=docker", "-v", "/sys/fs/cgroup:/sys/fs/cgroup",
+        "-d", "-i", "-t", "{{.Image}}", "/usr/sbin/init"
+      ],
+      "changes": [
+        "ENV LANG en_US.UTF-8",
+        "ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "provisioners/puppet.sh"
+    },
+    {
+      "type": "puppet-masterless",
+      "prevent_sudo": true,
+      "puppet_bin_dir": "/opt/puppetlabs/bin/",
+      "extra_arguments": "--debug",
+      "staging_directory": "/tmp/aem-platform-buildenv/",
+      "manifest_file": "provisioners/aem-platform-buildenv.pp",
+      "module_paths": [
+        "modules"
+      ]
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "docker-tag",
+      "repository": "shinesolutions/aem-platform-buildenv",
+      "tag": "latest",
+      "only": [
+        "docker"
+      ]
+    }
+  ]
+}

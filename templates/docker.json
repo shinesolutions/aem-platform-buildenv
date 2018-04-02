@@ -8,7 +8,7 @@
       "commit": true,
       "run_command": [
         "--privileged", "-e", "container=docker", "-v", "/sys/fs/cgroup:/sys/fs/cgroup",
-        "-d", "-i", "-t", "{{.Image}}", "/usr/sbin/init"
+        "-d", "-i", "-t", "{{.Image}}", "/usr/bin/bash"
       ],
       "changes": [
         "ENV LANG en_US.UTF-8",

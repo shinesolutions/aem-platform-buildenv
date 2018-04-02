@@ -8,7 +8,7 @@ package { ['ShellCheck', 'unzip', 'wget']:
 }
 
 include pip
-pip::install { 'awscli':
+pip::install { ['ansible', 'awscli']:
   ensure => present,
 }
 
@@ -21,4 +21,20 @@ archive { '/usr/local/bin/packer-post-processor-json-updater':
 } -> file { '/usr/local/bin/packer-post-processor-json-updater':
   ensure => 'file',
   mode   => '0755',
+}
+
+class { '::phantomjs':
+  package_version => '1.9.7',
+  package_update  => true,
+  install_dir     => '/usr/local/bin',
+  source_dir      => '/opt',
+  timeout         => 600,
+}
+
+class { 'java':
+  distribution => 'jdk',
+}
+
+class { 'maven::maven':
+  version => '3.5.0',
 }

@@ -33,4 +33,4 @@ Run a Docker container from the repository directory:
       -i -t shinesolutions/aem-platform-buildenv \
       bash
 
-Alternatively, you can the command without `--rm` flag if you want to keep the container along with the downloaded tools and dependencies.
+Alternatively, you can run the command without `--rm` flag if you want to keep the container along with the downloaded tools and dependencies.

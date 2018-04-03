@@ -1,4 +1,4 @@
-ci: clean tools deps lint
+ci: clean tools deps lint docker
 
 clean:
 	rm -rf logs modules

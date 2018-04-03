@@ -27,4 +27,7 @@ docker:
 		packer build \
 		templates/docker.json
 
-.PHONY: ci clean init deps tools docker
+publish:
+	docker push shinesolutions/aem-platform-buildenv:latest
+
+.PHONY: ci clean init deps tools docker publish

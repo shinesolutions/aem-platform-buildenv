@@ -1,15 +1,15 @@
 [![Build Status](https://img.shields.io/travis/shinesolutions/aem-platform-buildenv.svg)](http://travis-ci.org/shinesolutions/aem-platform-buildenv)
 [![Docker Pulls Count](https://img.shields.io/docker/pulls/shinesolutions/aem-platform-buildenv.svg)](https://hub.docker.com/r/shinesolutions/aem-platform-buildenv/)
 
-Packer aem-platform-buildenv
----------------
+AEM Platform BuildEnv
+---------------------
 
-Packer aem-platform-buildenv is a ...
+AEM Platform BuildEnv is a Docker-based environment for building [Shine Solutions' open source AEM Platform repositories](https://github.com/shinesolutions?q=aem).
 
 Installation
 ------------
 
-Pull aem-platform-buildenv Docker image from Docker Hub:
+Pull AEM Platform BuildEnv Docker image from Docker Hub:
 
     docker pull shinesolutions/aem-platform-buildenv
 
@@ -22,12 +22,15 @@ Or alternatively, you can create the Docker image:
 Usage
 -----
 
+Run a Docker container from the repository directory:
+(you might want to create an alias for the lengthy command below)
+
     docker run \
-      --workdir /opt/workspace \
-      -v $(pwd):/opt/workspace \
-      -t shinesolutions/aem-platform-buildenv \
       --rm \
-      aem-platform-buildenv \
-      --jar /opt/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
-      --api-spec path/to/spec.yml \
-      javascript-gen
+      --workdir /opt/workspace \
+      -v /var/run/docker.sock:/var/run/docker.sock \
+      -v `pwd`:/opt/workspace \
+      -i -t shinesolutions/aem-platform-buildenv \
+      bash
+
+Alternatively, you can the command without `--rm` flag if you want to keep the container along with the downloaded tools and dependencies.

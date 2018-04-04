@@ -12,7 +12,7 @@
       ],
       "changes": [
         "ENV LANG en_US.UTF-8",
-        "ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        "ENV PATH /opt/puppetlabs/puppet/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       ]
     }
   ],

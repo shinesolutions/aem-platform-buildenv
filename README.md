@@ -30,7 +30,6 @@ Run a Docker container from the repository directory:
       --workdir /opt/workspace \
       -v /var/run/docker.sock:/var/run/docker.sock \
       -v `pwd`:/opt/workspace \
-      -i -t shinesolutions/aem-platform-buildenv \
-      bash
+      -i -t shinesolutions/aem-platform-buildenv
 
 You can also run the command without `--rm` flag if you want to keep the container along with the downloaded tools and dependencies.

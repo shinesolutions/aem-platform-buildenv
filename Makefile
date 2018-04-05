@@ -34,7 +34,14 @@ docker-sandpit:
 		packer build \
 		templates/docker-sandpit.json
 
+docker-publisher:
+	mkdir -p logs/
+	PACKER_LOG_PATH=logs/aem-platform-buildenv-publisher.log \
+		PACKER_LOG=1 \
+		packer build \
+		templates/docker-publisher.json
+
 publish:
 	docker push shinesolutions/aem-platform-buildenv:latest
 
-.PHONY: ci clean init deps tools docker docker-sandpit publish
+.PHONY: ci clean init deps tools docker docker-sandpit docker-publisher publish

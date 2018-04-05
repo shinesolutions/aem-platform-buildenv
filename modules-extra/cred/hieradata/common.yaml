@@ -1,0 +1,4 @@
+---
+cred::aws::base_dir: /root/
+cred::aws::aws_access_key_id: ''
+cred::aws::aws_secret_access_key: ''

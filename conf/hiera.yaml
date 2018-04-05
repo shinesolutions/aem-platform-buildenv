@@ -1,0 +1,9 @@
+---
+:backends: yaml
+:yaml:
+  :datadir: "/tmp/aem-platform-buildenv/module-1/cred/hieradata"
+:hierarchy:
+  - common
+:logger: noop
+:merge_behavior: native
+:deep_merge_options: {}

@@ -1,0 +1,44 @@
+{
+  "variables": {
+  },
+  "builders": [
+    {
+      "type": "docker",
+      "image": "shinesolutions/aem-platform-buildenv",
+      "commit": true,
+      "run_command": [
+        "--privileged", "-e", "container=docker", "-v", "/sys/fs/cgroup:/sys/fs/cgroup",
+        "-d", "-i", "-t", "{{.Image}}", "/usr/bin/bash"
+      ],
+      "changes": [
+        "ENV LANG en_US.UTF-8",
+        "ENV PATH /opt/puppetlabs/puppet/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "puppet-masterless",
+      "prevent_sudo": true,
+      "puppet_bin_dir": "/opt/puppetlabs/bin/",
+      "hiera_config_path": "conf/hiera.yaml",
+      "extra_arguments": "--debug",
+      "staging_directory": "/tmp/aem-platform-buildenv/",
+      "manifest_file": "provisioners/aem-platform-buildenv-publisher.pp",
+      "module_paths": [
+        "modules",
+        "modules-extra"
+      ]
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "docker-tag",
+      "repository": "shinesolutions/aem-platform-buildenv-publisher",
+      "tag": "latest",
+      "only": [
+        "docker"
+      ]
+    }
+  ]
+}

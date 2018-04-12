@@ -2,7 +2,7 @@ class { 'nodejs':
   repo_url_suffix       => '8.x',
   nodejs_package_ensure => '8.10.0',
 }
-package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker']:
+package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker', 'jq']:
   ensure   => 'present',
   provider => 'yum',
 }

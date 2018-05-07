@@ -6,7 +6,7 @@ class { 'nodejs':
   provider => 'npm',
 }
 
-package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker', 'jq']:
+package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker', 'jq', 'python-devel']:
   ensure   => 'present',
   provider => 'yum',
 }

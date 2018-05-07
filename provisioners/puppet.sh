@@ -9,7 +9,7 @@ yum -y groupinstall 'Development Tools'
 # Enable the rhui-REGION-rhel-server-optional to install ruby-devel
 rpm -ivh --force https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 yum-config-manager --enable rhui-REGION-rhel-server-optional
-yum -y install which make python-devel ruby-devel zlib-devel
+yum -y install which make ruby-devel zlib-devel
 
 # Info
 /opt/puppetlabs/puppet/bin/ruby --version

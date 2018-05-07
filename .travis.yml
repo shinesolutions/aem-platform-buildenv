@@ -2,12 +2,6 @@ sudo: required
 language: ruby
 services:
   - docker
-addons:
-  apt:
-    sources:
-    - debian-sid
-    packages:
-    - shellcheck
 install:
   - sudo apt-get install unzip
   - wget https://releases.hashicorp.com/packer/1.2.2/packer_1.2.2_linux_amd64.zip

@@ -5,3 +5,6 @@ cred::aws::aws_secret_access_key: ''
 
 cred::rubygems::base_dir: /root/
 cred::rubygems::rubygems_api_key: ''
+
+cred::maven::sonatype_username: ''
+cred::maven::sonatype_password: ''

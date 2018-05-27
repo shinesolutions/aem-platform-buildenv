@@ -8,3 +8,8 @@ cred::rubygems::rubygems_api_key: ''
 
 cred::maven::sonatype_username: ''
 cred::maven::sonatype_password: ''
+cred::maven::gpg_keyname: ''
+cred::maven::gpg_passphrase: ''
+
+cred::files::base_dir: /root/
+cred::files::gpg_source: /tmp/gpg.tar.gz

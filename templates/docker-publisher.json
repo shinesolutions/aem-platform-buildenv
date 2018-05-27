@@ -18,6 +18,11 @@
   ],
   "provisioners": [
     {
+      "source": "stage/gpg.tar.gz",
+      "destination": "/tmp/",
+      "type": "file"
+    },
+    {
       "type": "puppet-masterless",
       "prevent_sudo": true,
       "puppet_bin_dir": "/opt/puppetlabs/bin/",

@@ -1,6 +1,8 @@
 class cred::maven(
   $sonatype_username,
   $sonatype_password,
+  $gpg_keyname,
+  $gpg_passphrase,
 ) {
 
   $sonatype_snapshot = {
@@ -18,7 +20,19 @@ class cred::maven(
   class { 'maven::maven':
     version => '3.2.5',
   } -> maven::settings { 'maven-user-settings' :
-    servers => [$sonatype_snapshot, $sonatype_release],
+    servers    => [$sonatype_snapshot, $sonatype_release],
+    profiles   => {
+      'sign-artifacts' => {
+        'activation' => {
+          'activeByDefault' => true,
+        },
+        properties => {
+          'gpg.executable' => 'gpg',
+          'gpg.keyname'    => $gpg_keyname,
+          'gpg.passphrase' => $gpg_passphrase,
+        },
+      },
+    },
   }
 
 }

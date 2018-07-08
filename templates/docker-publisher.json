@@ -19,7 +19,7 @@
   ],
   "provisioners": [
     {
-      "source": "stage/gpg.tar.gz",
+      "source": "stage/artifacts-publisher/",
       "destination": "/tmp/",
       "type": "file"
     },

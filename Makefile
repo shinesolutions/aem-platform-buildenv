@@ -36,6 +36,7 @@ docker-sandpit:
 
 docker-publisher:
 	mkdir -p logs/
+	mkdir -p stage/artifacts-publisher/
 	PACKER_LOG_PATH=logs/aem-platform-buildenv-publisher.log \
 		PACKER_LOG=1 \
 		packer build \

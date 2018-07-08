@@ -4,7 +4,7 @@
 AEM Platform BuildEnv
 ---------------------
 
-AEM Platform BuildEnv is a Docker-based environment for building [Shine Solutions' open source AEM Platform repositories](https://github.com/shinesolutions?q=aem). The Docker image already contains the software required to run all build targets from those repositories.
+AEM Platform BuildEnv is a Docker-based environment for building [AEM OpenCloud repositories](https://github.com/topics/aem-opencloud). The Docker image already contains the software required to run all build targets from those repositories.
 
 Installation
 ------------
@@ -33,3 +33,5 @@ Run a Docker container from the repository directory:
       -i -t shinesolutions/aem-platform-buildenv
 
 You can also run the command without `--rm` flag if you want to keep the container along with the downloaded tools and dependencies.
+
+Please note that the above image does not contain any credential. It's up to you to set up your AWS/SCM/etc credentials.

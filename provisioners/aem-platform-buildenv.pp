@@ -12,8 +12,13 @@ package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker', 'jq', 'python-devel']
 }
 
 include pip
-pip::install { ['ansible', 'awscli']:
-  ensure => present,
+pip::install { 'ansible':
+  ensure  => present,
+  version => '2.5.8',
+}
+pip::install { 'awscli':
+  ensure  => present,
+  version => '1.16.7',
 }
 
 class { 'hashicorp::packer':

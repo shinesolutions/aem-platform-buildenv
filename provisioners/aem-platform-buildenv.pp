@@ -13,16 +13,18 @@ package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker', 'jq', 'python-devel']
 
 include pip
 pip::install { 'ansible':
-  ensure  => present,
-  version => '2.5.8',
+  ensure         => present,
+  version        => '2.5.8',
+  python_version => '2.7',
 }
 pip::install { 'awscli':
-  ensure  => present,
-  version => '1.16.7',
+  ensure         => present,
+  version        => '1.16.7',
+  python_version => '2.7',
 }
 
 class { 'hashicorp::packer':
-  version => '1.2.2',
+  version => '1.2.5',
 }
 
 archive { '/usr/local/bin/packer-post-processor-json-updater':

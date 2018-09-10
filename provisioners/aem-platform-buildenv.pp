@@ -19,12 +19,12 @@ pip::install { 'ansible':
 }
 pip::install { 'awscli':
   ensure         => present,
-  version        => '1.16.7',
+  version        => '1.16.10',
   python_version => '2.7',
 }
 
 class { 'hashicorp::packer':
-  version => '1.2.5',
+  version => '1.2.4',
 }
 
 archive { '/usr/local/bin/packer-post-processor-json-updater':

@@ -15,8 +15,16 @@ Pull AEM Platform BuildEnv Docker image from Docker Hub:
 
 Or alternatively, you can create the Docker image:
 
+    Install Hashicorp packer tool for your OS:
+      https://www.packer.io/intro/getting-started/install.html
+
+    Install Ruby bundler module (may require sudo):
+      gem install bundler --conservative
+
     git clone https://github.com/shinesolutions/aem-platform-buildenv
+
     cd aem-platform-buildenv
+    make deps
     make docker
 
 Usage

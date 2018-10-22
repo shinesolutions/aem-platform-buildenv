@@ -7,11 +7,10 @@ init:
 	mkdir -p artifacts
 
 deps:
-	bundle install
 	r10k puppetfile install --moduledir modules --verbose
 
 tools:
-	gem install puppet-lint r10k
+	bundle install
 
 lint:
 	puppet-lint \

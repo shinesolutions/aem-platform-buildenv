@@ -24,7 +24,7 @@ Or alternatively, you can create the Docker image:
     git clone https://github.com/shinesolutions/aem-platform-buildenv
 
     cd aem-platform-buildenv
-    make tools && make deps
+    make deps
     make docker
 
 Usage

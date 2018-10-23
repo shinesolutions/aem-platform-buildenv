@@ -7,10 +7,8 @@ init:
 	mkdir -p artifacts
 
 deps:
-	r10k puppetfile install --moduledir modules --verbose
-
-tools:
 	bundle install
+	r10k puppetfile install --moduledir modules --verbose
 
 lint:
 	puppet-lint \

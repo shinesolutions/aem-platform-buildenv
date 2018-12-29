@@ -13,3 +13,6 @@ cred::maven::gpg_passphrase: ''
 
 cred::files::base_dir: /root/
 cred::files::gpg_source: /tmp/gpg.tar.gz
+
+cred::profile::google_idp_id: ''
+cred::profile::google_sp_id: ''

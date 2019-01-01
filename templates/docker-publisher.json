@@ -4,7 +4,7 @@
   "builders": [
     {
       "type": "docker",
-      "image": "shinesolutions/aem-platform-buildenv",
+      "image": "shinesolutions/aem-platform-buildenv-sandpit",
       "commit": true,
       "run_command": [
         "--privileged", "-e", "container=docker", "-v", "/sys/fs/cgroup:/sys/fs/cgroup",

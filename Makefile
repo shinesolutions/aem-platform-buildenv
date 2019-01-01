@@ -18,12 +18,12 @@ lint:
 	shellcheck \
 		provisioners/*.sh
 
-docker:
+docker-base:
 	mkdir -p logs/
 	PACKER_LOG_PATH=logs/aem-platform-buildenv.log \
 		PACKER_LOG=1 \
 		packer build \
-		templates/docker.json
+		templates/docker-base.json
 
 docker-sandpit:
 	mkdir -p logs/
@@ -40,7 +40,10 @@ docker-publisher:
 		packer build \
 		templates/docker-publisher.json
 
-publish:
+publish-base:
 	docker push shinesolutions/aem-platform-buildenv:latest
 
-.PHONY: ci clean init deps lint docker docker-sandpit docker-publisher publish
+publish-sandpit:
+	docker push shinesolutions/aem-platform-buildenv-sandpit:latest
+
+.PHONY: ci clean init deps lint docker-base docker-sandpit docker-publisher publish-base publish-sandpit

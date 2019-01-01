@@ -43,4 +43,4 @@ docker-publisher:
 publish:
 	docker push shinesolutions/aem-platform-buildenv:latest
 
-.PHONY: ci clean init deps tools docker docker-sandpit docker-publisher publish
+.PHONY: ci clean init deps lint docker docker-sandpit docker-publisher publish

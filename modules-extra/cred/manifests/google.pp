@@ -1,4 +1,4 @@
-class cred::profile(
+class cred::google(
   $base_dir,
   $google_idp_id,
   $google_sp_id,

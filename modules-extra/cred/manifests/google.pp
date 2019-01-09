@@ -6,6 +6,6 @@ class cred::google(
 
   file_line { 'Set awsgoogleauth alias for generating AWS STS token from Google SSO':
     path => "${base_dir}/.bashrc",
-    line => "alias gsso2aws='aws-google-auth --idp-id ${$google_idp_id} --sp-id ${$google_sp_id} --profile default --save-failure-html'",
+    line => "alias gsso2aws='aws-google-auth --duration 14400 --idp-id ${$google_idp_id} --sp-id ${$google_sp_id} --profile default --save-failure-html'",
   }
 }

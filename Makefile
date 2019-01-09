@@ -1,4 +1,4 @@
-ci: clean deps lint docker-base docker-sandpit docker-publisher
+ci: clean deps lint docker-base docker-sandpit
 
 clean:
 	rm -rf logs modules

@@ -5,3 +5,4 @@ modules
 *.pwd
 *.pwi
 stage
+modules-extra/cred/hieradata/local.yaml

@@ -3,6 +3,7 @@
 :yaml:
   :datadir: "/tmp/aem-platform-buildenv/module-1/cred/hieradata"
 :hierarchy:
+  - local
   - common
 :logger: noop
 :merge_behavior: native

@@ -1,7 +1,7 @@
 class { 'nodejs':
   repo_url_suffix       => '8.x',
   nodejs_package_ensure => '8.10.0',
-} -> package { ['open-sesame']:
+} -> package { ['open-sesame', 'rtk']:
   ensure   => 'present',
   provider => 'npm',
 }

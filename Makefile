@@ -7,6 +7,7 @@ init:
 	mkdir -p artifacts
 
 deps:
+	gem install bundler
 	bundle install
 	r10k puppetfile install --moduledir modules --verbose
 

@@ -45,6 +45,14 @@
       "only": [
         "docker"
       ]
+    },
+    {
+      "type": "docker-tag",
+      "repository": "shinesolutions/aem-platform-buildenv-publisher",
+      "tag": "latest",
+      "only": [
+        "docker"
+      ]
     }
   ]
 }

@@ -40,6 +40,14 @@
       "only": [
         "docker"
       ]
+    },
+    {
+      "type": "docker-tag",
+      "repository": "shinesolutions/aem-platform-buildenv-sandpit",
+      "tag": "0.9.0",
+      "only": [
+        "docker"
+      ]
     }
   ]
 }

@@ -1,3 +1,5 @@
+version ?= 0.9.0
+
 ci: clean deps lint docker-base docker-sandpit
 
 clean:
@@ -43,8 +45,10 @@ docker-publisher:
 
 publish-base:
 	docker push shinesolutions/aem-platform-buildenv:latest
+	docker push shinesolutions/aem-platform-buildenv:$(version)
 
 publish-sandpit:
 	docker push shinesolutions/aem-platform-buildenv-sandpit:latest
+	docker push shinesolutions/aem-platform-buildenv-sandpit:$(version)
 
 .PHONY: ci clean init deps lint docker-base docker-sandpit docker-publisher publish-base publish-sandpit

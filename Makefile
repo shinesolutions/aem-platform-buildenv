@@ -1,4 +1,4 @@
-version ?= 0.9.0
+version ?= 0.10.0-pre
 
 ci: clean deps lint docker-base docker-sandpit
 

@@ -12,7 +12,7 @@ pip::install { 'aws-google-auth[u2f]':
   python_version => '2.7',
 } -> pip::install { 'botocore':
   ensure         => present,
-  version        => '1.11.9', # most recent 1.11.x required by aws-google-auth due to range < 1.12
+  version        => '1.12.123', # most recent 1.11.x required by aws-google-auth due to range < 1.12
   python_version => '2.7',
 }
 

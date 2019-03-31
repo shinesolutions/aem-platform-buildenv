@@ -16,6 +16,11 @@ class { 'nodejs':
   ensure   => '1.1.0',
   provider => 'npm',
 
+# putasset is used for publishing artifacts to GitHub releases
+} -> package { 'putasset':
+  ensure   => '4.3.1',
+  provider => 'npm',
+
 # rtk is used for automating repo release process (versioning, tagging)
 } -> package { 'rtk':
   ensure   => '0.1.0',

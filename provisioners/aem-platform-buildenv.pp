@@ -6,7 +6,7 @@ class { 'nodejs':
 # Jenkins pipelines, it is written in node.js, and we ended up using this
 # because there was no Python-based Jenkins CLI that works with Jenkins crumb.
 } -> package { 'nestor':
-  ensure   => '2.1.0',
+  ensure   => '2.2.0',
   provider => 'npm',
 
 # open-sesame is used as a convenient utility tool for allowing inbound rule

@@ -4,21 +4,21 @@
       "path": "templates/docker-base.json",
       "type": "json",
       "params": {
-        "property": "post-processors[1].tag"
+        "property": "post-processors.1.tag"
       }
     },
     {
       "path": "templates/docker-sandpit.json",
       "type": "json",
       "params": {
-        "property": "post-processors[1].tag"
+        "property": "post-processors.1.tag"
       }
     },
     {
       "path": "templates/docker-publisher.json",
       "type": "json",
       "params": {
-        "property": "post-processors[1].tag"
+        "property": "post-processors.1.tag"
       }
     },
     {

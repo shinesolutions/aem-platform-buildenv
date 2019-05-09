@@ -1,14 +1,21 @@
 {
-  "variables": {
-  },
+  "variables": {},
   "builders": [
     {
       "type": "docker",
       "image": "centos:centos7",
       "commit": true,
       "run_command": [
-        "--privileged", "-e", "container=docker", "-v", "/sys/fs/cgroup:/sys/fs/cgroup",
-        "-d", "-i", "-t", "{{.Image}}", "/usr/bin/bash"
+        "--privileged",
+        "-e",
+        "container=docker",
+        "-v",
+        "/sys/fs/cgroup:/sys/fs/cgroup",
+        "-d",
+        "-i",
+        "-t",
+        "{{.Image}}",
+        "/usr/bin/bash"
       ],
       "changes": [
         "ENV LANG en_US.UTF-8",
@@ -46,7 +53,7 @@
     {
       "type": "docker-tag",
       "repository": "shinesolutions/aem-platform-buildenv",
-      "tag": "0.10.0-pre",
+      "tag": "0.10.0",
       "only": [
         "docker"
       ]

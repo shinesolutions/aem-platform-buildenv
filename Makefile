@@ -51,4 +51,7 @@ publish-sandpit:
 	docker push shinesolutions/aem-platform-buildenv-sandpit:latest
 	docker push shinesolutions/aem-platform-buildenv-sandpit:$(version)
 
-.PHONY: ci clean init deps lint docker-base docker-sandpit docker-publisher publish-base publish-sandpit
+release:
+	rtk release
+	
+.PHONY: ci clean init deps lint docker-base docker-sandpit docker-publisher publish-base publish-sandpit release

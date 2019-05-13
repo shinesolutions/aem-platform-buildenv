@@ -1,6 +1,6 @@
 class { 'nodejs':
-  repo_url_suffix       => '8.x',
-  nodejs_package_ensure => '8.10.0',
+  repo_url_suffix       => '10.x',
+  nodejs_package_ensure => '10.15.3',
 
 # nestor is used for triggering and integration testing AEM OpenCloud Manager
 # Jenkins pipelines, it is written in node.js, and we ended up using this
@@ -23,7 +23,7 @@ class { 'nodejs':
 
 # rtk is used for automating repo release process (versioning, tagging)
 } -> package { 'rtk':
-  ensure   => '0.1.0',
+  ensure   => '0.2.0',
   provider => 'npm',
 }
 
@@ -36,12 +36,12 @@ package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker', 'jq', 'python-devel']
 include pip
 pip::install { 'ansible':
   ensure         => present,
-  version        => '2.5.8',
+  version        => '2.7.10',
   python_version => '2.7',
 }
 pip::install { 'awscli':
   ensure         => present,
-  version        => '1.16.10',
+  version        => '1.16.115',
   python_version => '2.7',
 }
 

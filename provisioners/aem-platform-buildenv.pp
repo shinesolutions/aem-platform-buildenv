@@ -41,7 +41,7 @@ pip::install { 'ansible':
 }
 pip::install { 'awscli':
   ensure         => present,
-  version        => '1.16.133',
+  version        => '1.16.10',
   python_version => '2.7',
 }
 

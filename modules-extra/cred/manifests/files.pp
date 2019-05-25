@@ -3,9 +3,14 @@ class cred::files(
   $gpg_source,
 ) {
 
-  archive { "${base_dir}/":
-   source  => $gpg_source,
-   extract => true,
+  file { "${base_dir}/.gnupg":
+    purge => true,
+  } -> archive { "${base_dir}/":
+    ensure  => present,
+    source  => $gpg_source,
+    extract => true,
+    extract_path => $base_dir,
+    cleanup => false,
   }
 
 }

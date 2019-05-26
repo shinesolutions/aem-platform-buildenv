@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgrade rtk to 0.2.0
 - Upgrade node.js to 10.15.3
 - Upgrade Ansible to 2.7.10
-- Upgrade AWS CLI to 1.16.166
+- Upgrade AWS CLI to 1.16.115
 - Cleanup previous gnupg before provisioning new one on publisher image
 
 ## 0.10.0 - 2019-05-09

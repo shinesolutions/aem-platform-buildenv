@@ -3,7 +3,7 @@
   "builders": [
     {
       "type": "docker",
-      "image": "shinesolutions/aem-platform-buildenv-sandpit",
+      "image": "shinesolutions/aem-platform-buildenv",
       "commit": true,
       "run_command": [
         "--privileged",

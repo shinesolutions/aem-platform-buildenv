@@ -1,6 +1,13 @@
 {
   "resources": [
     {
+      "path": "Makefile",
+      "type": "makefile",
+      "params": {
+        "variable": "version"
+      }
+    },
+    {
       "path": "templates/docker-base.json",
       "type": "json",
       "params": {

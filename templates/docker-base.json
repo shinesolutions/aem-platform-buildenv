@@ -42,21 +42,21 @@
     }
   ],
   "post-processors": [
-    {
-      "type": "docker-tag",
-      "repository": "shinesolutions/aem-platform-buildenv",
-      "tag": "latest",
-      "only": [
-        "docker"
-      ]
-    },
-    {
-      "type": "docker-tag",
-      "repository": "shinesolutions/aem-platform-buildenv",
-      "tag": "0.12.0-pre.0",
-      "only": [
-        "docker"
-      ]
-    }
+    [
+      {
+          "type": "shell-local",
+          "inline": ["eval $(aws ecr get-login --no-include-email --region ap-southeast-2 | sed 's|https://||')"]
+      },
+      {
+        "type": "docker-tag",
+        "repository": "277912258437.dkr.ecr.ap-southeast-2.amazonaws.com/opencloud-test",
+        "tag": "latest"
+      },
+      {
+        "type": "docker-push",
+        "ecr_login": false,
+        "login_server": "277912258437.dkr.ecr.ap-southeast-2.amazonaws.com/opencloud-test"
+      }
+    ]
   ]
 }

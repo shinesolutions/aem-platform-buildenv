@@ -51,10 +51,8 @@ publish-sandpit:
 	docker push shinesolutions/aem-platform-buildenv-sandpit:latest
 	docker push shinesolutions/aem-platform-buildenv-sandpit:$(version)
 
-publish-base-ecr:
-	eval $(aws ecr get-login --no-include-email --region ap-southeast-2 | sed 's|https://||')
-	docker push 277912258437.dkr.ecr.ap-southeast-2.amazonaws.com/aem-platform-buildenv:latest
-	docker push 277912258437.dkr.ecr.ap-southeast-2.amazonaws.com/aem-platform-buildenv:$(version)
+publish-ecr-base:
+	scripts/run-playbook-stack.sh ecr-publish "${config_path}" $(version)
 
 release:
 	rtk release

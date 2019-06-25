@@ -1,0 +1,25 @@
+---
+
+- name: Publish a Docker Image to ECR
+  hosts: all
+  gather_facts: no
+  connection: local
+  
+  tasks:
+    - name: docker login (must `--no-include-email`)
+      shell: "$(aws ecr get-login --region {{ aws.region }} --no-include-email)"
+      args:
+        executable: /bin/bash
+      when: aws.region is search("amazonaws.com")
+
+    - name: push image:version
+      docker_image:
+        name: "{{ docker.URI }}/{{ docker.image.name }}"
+        tag: "{{ docker.image.version }}"
+        push: yes
+
+    - name: publish image:latest
+      docker_image:
+        name: "{{ docker.URI }}/{{ docker.image.name }}"
+        tag: latest
+        push: no

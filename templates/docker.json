@@ -1,8 +1,7 @@
 {
     "variables": {
         "version": null,
-        "current_repo": null,
-        "latest_repo": null
+        "name": null
     },
     "builders": [
       {
@@ -48,7 +47,7 @@
     "post-processors": [
       {
         "type": "docker-tag",
-        "repository": "{{user `latest_repo`}}",
+        "repository": "{{user `name`}}",
         "tag": "latest",
         "only": [
           "docker"
@@ -56,7 +55,7 @@
       },
       {
         "type": "docker-tag",
-        "repository": "{{user `current_repo`}}",
+        "repository": "{{user `name`}}",
         "tag": "{{user `version`}}",
         "only": [
           "docker"

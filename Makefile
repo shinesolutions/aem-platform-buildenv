@@ -51,8 +51,11 @@ publish-sandpit:
 	docker push shinesolutions/aem-platform-buildenv-sandpit:latest
 	docker push shinesolutions/aem-platform-buildenv-sandpit:$(version)
 
-publish-ecr-base:
-	scripts/run-playbook-stack.sh ecr-publish "${config_path}" $(version)
+build:
+	scripts/run-playbook-stack.sh build "${config_path}"
+
+publish:
+	scripts/run-playbook-stack.sh publish "${config_path}"
 
 release:
 	rtk release

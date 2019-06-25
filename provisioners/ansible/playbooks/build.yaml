@@ -1,0 +1,23 @@
+---
+
+- name: Build a Docker Image
+  hosts: all
+  gather_facts: no
+  connection: local
+  
+  tasks:
+    - name: create log folder
+      file: 
+        path: ../../../logs/
+        state: directory
+
+    - name: build image
+      shell: "PACKER_LOG_PATH=logs/aem-platform-buildenv.log \
+		                          PACKER_LOG=1 \
+                              packer build \
+                              -var 'version={{ docker.image.version }}' \
+                              -var 'name={{ docker.URI }}/{{ docker.image.name }}' \
+		                          templates/docker.json"
+      args:
+        executable: /bin/bash
+        chdir: "../../../"

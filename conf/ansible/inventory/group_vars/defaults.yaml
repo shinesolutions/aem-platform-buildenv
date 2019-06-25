@@ -1,80 +1,9 @@
 ---
 
-platform_type: aws
-os_type: rhel7
-
-http_proxy: ''
-https_proxy: ''
-no_proxy: ''
-
-timezone:
-  region: Australia
-  locality: Melbourne
-
-custom_image_provisioner:
-  pre:
-    timeout: 3600
-  post:
-    timeout: 3600
-
 aws:
-  user: ec2-user
   region: 'ap-southeast-2'
-  vpc_id: overwrite-me
-  subnet_id: overwrite-me
-  resources:
-    stack_name: packer-aem-resources-stack
-    s3_bucket: overwrite-me
-    enable_secrets_manager: true
-    create_iam_packer_role: true
-    create_s3_bucket: true
-  source_ami: overwrite-me
-  ami_users: ''
-  instance_profile: overwrite-me
-  install_ssm_agent: true
-  install_cloudwatchlogs: true
-  root_volume_size: 20
-  data_volume_size: 75
-  tags:
-    - Key: overwrite-me
-      Value: overwrite-me
-  certificate_arn: overwrite-me
-  certificate_key_arn: overwrite-me
-  aem_certs_base: overwrite-me
-  aem_license: overwrite-me
-  aem_license_base: overwrite-me
-  rhel7:
-    devicemap_root: /dev/sda1
-    devicemap_data_b: /dev/xvdb
-    devicemap_data_c: /dev/xvdc
-  centos7:
-    devicemap_root: /dev/sda1
-    devicemap_data_b: /dev/sdb
-    devicemap_data_c: /dev/sdc
-  amazon-linux2:
-    devicemap_root: /dev/xvda
-    devicemap_data_b: /dev/xvdb
-    devicemap_data_c: /dev/xvdc
 
 docker:
-  source: overwrite-me
-
-aem:
-  profile: aem64_sp4
-  keystore_password_parameter: overwrite-me
-  author:
-    jvm_mem_opts: "-Xss4m -Xms4096m -Xmx8192m"
-    start_opts: ''
-    run_modes: []
-  publish:
-    jvm_mem_opts: "-Xss4m -Xms4096m -Xmx8192m"
-    start_opts: ''
-    run_modes: []
-  dispatcher:
-    version: 4.3.2
-    apache_module_base_url: http://download.macromedia.com/dispatcher/download
-  artifacts_base: overwrite-me
-  enable_custom_image_provisioner: false
-
-library:
-  aem_healthcheck_version: 1.3.3
+  URI: shinesolutions
+  image:
+    name: aem-platform-buildenv

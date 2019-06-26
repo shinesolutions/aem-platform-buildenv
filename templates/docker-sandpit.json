@@ -1,9 +1,14 @@
 {
-  "variables": {},
+  "variables": {
+    "timezone" : null,
+    "version": null,
+    "image_name": null,
+    "repository": null
+  },
   "builders": [
     {
       "type": "docker",
-      "image": "shinesolutions/aem-platform-buildenv",
+      "image": "{{user `repository`}}/{{user `image_name`}}",
       "commit": true,
       "run_command": [
         "--privileged",
@@ -31,8 +36,8 @@
       "puppet_bin_dir": "/opt/puppetlabs/bin/",
       "hiera_config_path": "conf/hiera.yaml",
       "extra_arguments": "--debug",
-      "staging_directory": "/tmp/aem-platform-buildenv/",
-      "manifest_file": "provisioners/aem-platform-buildenv-sandpit.pp",
+      "staging_directory": "/tmp/{{user `image_name`}}/",
+      "manifest_file": "provisioners/{{user `image_name`}}-sandpit.pp",
       "module_paths": [
         "modules",
         "modules-extra"
@@ -42,7 +47,7 @@
   "post-processors": [
     {
       "type": "docker-tag",
-      "repository": "shinesolutions/aem-platform-buildenv-sandpit",
+      "repository": "{{user `repository`}}/{{user `image_name`}}-sandpit",
       "tag": "latest",
       "only": [
         "docker"
@@ -50,7 +55,7 @@
     },
     {
       "type": "docker-tag",
-      "repository": "shinesolutions/aem-platform-buildenv-sandpit",
+      "repository": "{{user `repository`}}/{{user `image_name`}}-sandpit",
       "tag": "0.12.0-pre.0",
       "only": [
         "docker"

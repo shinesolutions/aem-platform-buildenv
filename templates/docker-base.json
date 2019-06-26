@@ -1,5 +1,10 @@
 {
-  "variables": {},
+  "variables": {
+    "timezone" : null,
+    "version": null,
+    "image_name": null,
+    "repository": null
+  },
   "builders": [
     {
       "type": "docker",
@@ -19,7 +24,7 @@
       ],
       "changes": [
         "ENV LANG en_US.UTF-8",
-        "ENV TZ Australia/Melbourne",
+        "ENV TZ {{user `timezone`}}",
         "ENV PATH /opt/puppetlabs/puppet/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       ]
     }
@@ -34,8 +39,8 @@
       "prevent_sudo": true,
       "puppet_bin_dir": "/opt/puppetlabs/bin/",
       "extra_arguments": "--debug",
-      "staging_directory": "/tmp/aem-platform-buildenv/",
-      "manifest_file": "provisioners/aem-platform-buildenv.pp",
+      "staging_directory": "/tmp/{{user `image_name`}}/",
+      "manifest_file": "provisioners/{{user `image_name`}}.pp",
       "module_paths": [
         "modules"
       ]
@@ -44,7 +49,7 @@
   "post-processors": [
     {
       "type": "docker-tag",
-      "repository": "shinesolutions/aem-platform-buildenv",
+      "repository": "{{user `repository`}}/{{user `image_name`}}",
       "tag": "latest",
       "only": [
         "docker"
@@ -52,8 +57,8 @@
     },
     {
       "type": "docker-tag",
-      "repository": "shinesolutions/aem-platform-buildenv",
-      "tag": "0.12.0-pre.0",
+      "repository": "{{user `repository`}}/{{user `image_name`}}",
+      "tag": "{{user `version`}}",
       "only": [
         "docker"
       ]

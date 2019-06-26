@@ -12,12 +12,14 @@
         state: directory
 
     - name: build image
-      shell: "PACKER_LOG_PATH=logs/aem-platform-buildenv.log \
+      shell: "PACKER_LOG_PATH=logs/{{ docker.image.name }}-{{ image_type }}.log \
 		                          PACKER_LOG=1 \
                               packer build \
                               -var 'version={{ docker.image.version }}' \
-                              -var 'name={{ docker.URI }}/{{ docker.image.name }}' \
-		                          templates/docker.json"
+                              -var 'image_name={{ docker.image.name }}' \
+                              -var 'repository={{ docker.repository }}' \
+                              -var 'timezone={{ docker.timezone }}' \
+		                          templates/docker-{{ image_type }}.json"
       args:
         executable: /bin/bash
         chdir: "../../../"

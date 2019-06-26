@@ -4,6 +4,7 @@ aws:
   region: 'ap-southeast-2'
 
 docker:
-  URI: shinesolutions
+  repository: shinesolutions
   image:
     name: aem-platform-buildenv
+  timezone: Australia/Melbourne

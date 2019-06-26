@@ -6,6 +6,9 @@
   connection: local
   
   tasks:
+    - set_fact:
+        post_fix: "{{ '' if (docker.image.name == 'base') else '-'+docker.image.name }}"
+
     - name: docker login (must `--no-include-email`)
       shell: "$(aws ecr get-login --region {{ aws.region }} --no-include-email)"
       args:
@@ -14,12 +17,12 @@
 
     - name: push image:version
       docker_image:
-        name: "{{ docker.URI }}/{{ docker.image.name }}"
+        name: "{{ docker.repository }}/{{ docker.image.name }}{{ post_fix }}"
         tag: "{{ docker.image.version }}"
         push: yes
 
     - name: publish image:latest
       docker_image:
-        name: "{{ docker.URI }}/{{ docker.image.name }}"
+        name: "{{ docker.repository }}/{{ docker.image.name }}{{ post_fix }}"
         tag: latest
         push: no

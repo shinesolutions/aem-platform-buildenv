@@ -13,7 +13,7 @@
       shell: "$(aws ecr get-login --region {{ aws.region }} --no-include-email)"
       args:
         executable: /bin/bash
-      when: docker.repository.find("amazonaws.com") != -1
+      when: docker.repository.find('amazonaws.com') != -1
 
     - name: push image:version
       docker_image:
@@ -25,4 +25,4 @@
       docker_image:
         name: "{{ docker.repository }}/{{ docker.image.name }}{{ post_fix }}"
         tag: latest
-        push: no
+        push: yes

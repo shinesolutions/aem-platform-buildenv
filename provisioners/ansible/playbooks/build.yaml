@@ -11,6 +11,12 @@
         path: ../../../logs/
         state: directory
 
+    - name: docker login (must `--no-include-email`)
+      shell: "$(aws ecr get-login --region {{ aws.region }} --no-include-email)"
+      args:
+        executable: /bin/bash
+      when: docker.repository.find('amazonaws.com') != -1 and image_type != 'base'
+      
     - name: build image
       shell: "PACKER_LOG_PATH=logs/{{ docker.image.name }}-{{ image_type }}.log \
 		                          PACKER_LOG=1 \
@@ -19,6 +25,7 @@
                               -var 'image_name={{ docker.image.name }}' \
                               -var 'repository={{ docker.repository }}' \
                               -var 'timezone={{ docker.timezone }}' \
+                              -var 'ecr_login={{ docker.repository.find('amazonaws.com') != -1 }}' \
 		                          templates/docker-{{ image_type }}.json"
       args:
         executable: /bin/bash

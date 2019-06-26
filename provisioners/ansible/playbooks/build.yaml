@@ -25,8 +25,7 @@
                               -var 'image_name={{ docker.image.name }}' \
                               -var 'repository={{ docker.repository }}' \
                               -var 'timezone={{ docker.timezone }}' \
-                              -var 'ecr_login={{ docker.repository.find('amazonaws.com') != -1 }}' \
-		                          templates/docker-{{ image_type }}.json"
+                              templates/docker-{{ image_type }}.json"
       args:
         executable: /bin/bash
         chdir: "../../../"

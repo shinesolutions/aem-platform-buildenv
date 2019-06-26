@@ -3,15 +3,12 @@
     "timezone" : null,
     "version": null,
     "image_name": null,
-    "repository": null,
-    "ecr_login": false
+    "repository": null
   },
   "builders": [
     {
       "type": "docker",
       "image": "{{user `repository`}}/{{user `image_name`}}",
-      "ecr_login": "{{user `ecr_login`}}",
-      "login_server": "{{user `repository`}}",
       "commit": true,
       "run_command": [
         "--privileged",

@@ -13,6 +13,9 @@ deps:
 	pip install -r requirements.txt
 
 lint:
+	yamllint \
+		conf/ansible/inventory/group_vars/*.yaml \
+		provisioners/ansible/playbooks/*.yaml
 	puppet-lint \
 		--fail-on-warnings \
 		--no-documentation-check \

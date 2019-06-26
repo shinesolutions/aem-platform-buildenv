@@ -1,31 +1,32 @@
 ---
 
-- name: Build a Docker Image
+- name: Build the docker image
   hosts: all
-  gather_facts: no
+  gather_facts: false
   connection: local
-  
+
   tasks:
-    - name: create log folder
-      file: 
+    - name: Create logs folder
+      file:
         path: ../../../logs/
         state: directory
 
-    - name: create artifacts-publisher folder
-      file: 
+    - name: Create artifacts-publisher folder
+      file:
         path: ../../../stage/artifacts-publisher
         state: directory
       when: image_type == 'publisher'
 
-    - name: docker login (must `--no-include-email`)
+    - name: User login
       shell: "$(aws ecr get-login --region {{ aws.region }} --no-include-email)"
       args:
         executable: /bin/bash
-      when: docker.repository.find('amazonaws.com') != -1 and image_type != 'base'
-      
-    - name: build image
-      shell: "PACKER_LOG_PATH=logs/{{ docker.image.name }}-{{ image_type }}.log \
-		                          PACKER_LOG=1 \
+      when: docker.repository.find('amazonaws.com')!=-1 and image_type!='base'
+
+    - name: Build the docker image
+      shell: >
+            PACKER_LOG_PATH=logs/{{ docker.image.name }}-{{ image_type }}.log \
+                              PACKER_LOG=1 \
                               packer build \
                               -var 'version={{ docker.image.version }}' \
                               -var 'image_name={{ docker.image.name }}' \

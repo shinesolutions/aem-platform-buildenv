@@ -7,13 +7,13 @@
   
   tasks:
     - set_fact:
-        post_fix: "{{ '' if (docker.image.name == 'base') else '-'+docker.image.name }}"
+        post_fix: "{{ '' if (image_type == 'base') else '-'+image_type }}"
 
     - name: docker login (must `--no-include-email`)
       shell: "$(aws ecr get-login --region {{ aws.region }} --no-include-email)"
       args:
         executable: /bin/bash
-      when: aws.region is search("amazonaws.com")
+      when: docker.repository.find("amazonaws.com") != -1
 
     - name: push image:version
       docker_image:

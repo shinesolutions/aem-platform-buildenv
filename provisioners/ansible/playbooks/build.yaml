@@ -24,8 +24,7 @@
       when: docker.repository.find('amazonaws.com')!=-1 and image_type!='base'
 
     - name: Build the docker image
-      shell: >
-            PACKER_LOG_PATH=logs/{{ docker.image.name }}-{{ image_type }}.log \
+      shell: "PACKER_LOG_PATH=logs/{{ docker.image.name }}-{{ image_type }}.log \
                               PACKER_LOG=1 \
                               packer build \
                               -var 'version={{ docker.image.version }}' \

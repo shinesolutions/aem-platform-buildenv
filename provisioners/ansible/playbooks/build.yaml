@@ -11,6 +11,12 @@
         path: ../../../logs/
         state: directory
 
+    - name: create artifacts-publisher folder
+      file: 
+        path: ../../../stage/artifacts-publisher
+        state: directory
+      when: image_type == 'publisher'
+
     - name: docker login (must `--no-include-email`)
       shell: "$(aws ecr get-login --region {{ aws.region }} --no-include-email)"
       args:

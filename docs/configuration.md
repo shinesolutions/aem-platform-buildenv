@@ -3,7 +3,7 @@ Configuration
 
 The following configurations are available for users to customise the creation process and the resulting machine images.
 
-Check out the [example configuration files](https://github.com/shinesolutions/aem-helloworld-config/tree/master/aem-platform-buildenv/sandpit) as reference.
+Check out the [example configuration files](https://github.com/shinesolutions/aem-helloworld-config/tree/ecr-support/aem-platform-buildenv/sandpit) as reference.
 
 ### User configuration properties for Docker:
 

@@ -9,7 +9,7 @@ Check out the [example configuration files](https://github.com/shinesolutions/ae
 
 | Name | Description | Required? | Default |
 |------|-------------|-----------|---------|
-| docker.timezone | [Timezone region name as per tz database list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) / [Timezone locality name as per tz database list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)| Optional | `Australia/Melbourne` |
+| docker.timezone | [TZ Database name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) | Optional | `Australia/Melbourne` |
 | docker.repository | [Dockerhub user name](https://docs.docker.com/docker-hub/repos/) or [ECR URI(\<aws_account_id\>.dkr.ecr.\<region\>.amazonaws.com)](https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth) | Optional | `Shinesolutions` |
 
 ### AWS platform type configuration properties:

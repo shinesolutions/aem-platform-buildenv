@@ -10,7 +10,7 @@ deps:
 	gem install bundler
 	bundle install
 	r10k puppetfile install --moduledir modules --verbose
-	pip install -r requirements.txt
+	pip install --user -r requirements.txt
 
 lint:
 	yamllint \

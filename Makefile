@@ -41,6 +41,12 @@ publish-sandpit:
 publish-publisher:
 	scripts/run-playbook-stack.sh publish "${config_path}" publisher
 
+docker-build:
+	scripts/run-playbook-stack.sh build "${config_path}" "${image_type}"
+
+publish:
+	scripts/run-playbook-stack.sh publish "${config_path}" "${image_type}"
+
 release:
 	rtk release
 	

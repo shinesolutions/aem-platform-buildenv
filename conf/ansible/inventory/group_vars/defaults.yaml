@@ -1,0 +1,11 @@
+---
+
+aws:
+  region: overwrite-me
+
+docker:
+  repository: shinesolutions
+  timezone: Australia/Melbourne
+  image:
+    name: aem-platform-buildenv
+    version: 0.12.0-pre.0

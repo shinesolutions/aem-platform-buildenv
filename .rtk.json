@@ -1,10 +1,10 @@
 {
   "resources": [
     {
-      "path": "Makefile",
-      "type": "makefile",
+      "path": "conf/ansible/inventory/group_vars/defaults.yaml",
+      "type": "yaml",
       "params": {
-        "variable": "version"
+        "variable": "docker.image.version"
       }
     },
     {

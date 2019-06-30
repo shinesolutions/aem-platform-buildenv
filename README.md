@@ -25,7 +25,7 @@ Or alternatively, you can create the Docker image:
 
     cd aem-platform-buildenv
     make deps
-    make docker
+    make docker-base
 
 Usage
 -----

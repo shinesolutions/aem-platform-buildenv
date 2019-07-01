@@ -17,7 +17,7 @@
         state: directory
       when: image_type == 'publisher'
 
-    - name: User login
+    - name: Login to repository for AWS ECR for publling the Docker image source
       shell: "$(aws ecr get-login --region {{ aws.region }} --no-include-email)"
       args:
         executable: /bin/bash

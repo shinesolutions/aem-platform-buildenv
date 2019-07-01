@@ -43,3 +43,13 @@ Run a Docker container from the repository directory:
 You can also run the command without `--rm` flag if you want to keep the container along with the downloaded tools and dependencies.
 
 Please note that the above image does not contain any credential. It's up to you to set up your AWS/SCM/etc credentials.
+
+AWS ECR
+-------
+
+Starting from AEM Platform BuildEnv 1.0.0, it's possible to use AWS ECR as an alternative to Docker Hub as Docker registry.
+
+1. Create [ECR repository](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-create.html) named `aem-platform-buildenv`
+2. Create [configuration file](https://github.com/shinesolutions/aem-platform-buildenv/blob/master/docs/configuration.md) `aws.region` and `docker.repository`
+3. Create Docker image by running `make docker-base config_path=<path/to/config/dir>`
+4. Publish Docker image by running `make publish-base config_path=<path/to/config/dir>`

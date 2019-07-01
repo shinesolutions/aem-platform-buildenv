@@ -56,7 +56,7 @@
     {
       "type": "docker-tag",
       "repository": "{{user `repository`}}/{{user `image_name`}}-sandpit",
-      "tag": "0.12.0-pre.0",
+      "tag": "{{user `version`}}",
       "only": [
         "docker"
       ]

@@ -4,5 +4,6 @@ modules
 *.hwm
 *.pwd
 *.pwi
+*.retry
 stage
 modules-extra/cred/hieradata/local.yaml

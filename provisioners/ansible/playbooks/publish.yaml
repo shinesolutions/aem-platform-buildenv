@@ -1,13 +1,13 @@
 ---
 
-- name: Publish the docker image to ECR
+- name: Publish the Docker image to repository
   hosts: all
   gather_facts: false
   connection: local
 
   tasks:
     - set_fact:
-        post_fix: "{{ '' if (image_type == 'base') else '-'+image_type }}"
+        images_name_suffix: "{{ '' if (image_type == 'base') else '-'+image_type }}"
 
     - name: User login
       shell: "$(aws ecr get-login --region {{ aws.region }} --no-include-email)"
@@ -15,14 +15,14 @@
         executable: /bin/bash
       when: docker.repository.find('amazonaws.com') != -1
 
-    - name: Publish the new built image
+    - name: Publish the Docker image with version tag
       docker_image:
-        name: "{{ docker.repository }}/{{ docker.image.name }}{{ post_fix }}"
+        name: "{{ docker.repository }}/{{ docker.image.name }}{{ images_name_suffix }}"
         tag: "{{ docker.image.version }}"
         push: true
 
-    - name: Publish the latest image
+    - name: Publish the Docker image with latest tag
       docker_image:
-        name: "{{ docker.repository }}/{{ docker.image.name }}{{ post_fix }}"
+        name: "{{ docker.repository }}/{{ docker.image.name }}{{ images_name_suffix }}"
         tag: latest
         push: true

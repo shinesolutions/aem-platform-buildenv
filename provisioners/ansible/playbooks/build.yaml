@@ -1,6 +1,6 @@
 ---
 
-- name: Build the docker image
+- name: Build the Docker image
   hosts: all
   gather_facts: false
   connection: local

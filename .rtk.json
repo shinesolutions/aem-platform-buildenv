@@ -4,7 +4,7 @@
       "path": "conf/ansible/inventory/group_vars/defaults.yaml",
       "type": "yaml",
       "params": {
-        "variable": "docker.image.version"
+        "property": "docker.image.version"
       }
     },
     {

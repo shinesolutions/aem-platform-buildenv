@@ -1,5 +1,6 @@
 [![Build Status](https://img.shields.io/travis/shinesolutions/aem-platform-buildenv.svg)](http://travis-ci.org/shinesolutions/aem-platform-buildenv)
 [![Docker Pulls Count](https://img.shields.io/docker/pulls/shinesolutions/aem-platform-buildenv.svg)](https://hub.docker.com/r/shinesolutions/aem-platform-buildenv/)
+[![Known Vulnerabilities](https://snyk.io/test/github/shinesolutions/aem-platform-buildenv/badge.svg)](https://snyk.io/test/github/shinesolutions/aem-platform-buildenv)
 
 AEM Platform BuildEnv
 ---------------------

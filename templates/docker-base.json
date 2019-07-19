@@ -38,11 +38,13 @@
       "type": "puppet-masterless",
       "prevent_sudo": true,
       "puppet_bin_dir": "/opt/puppetlabs/bin/",
+      "hiera_config_path": "conf/hiera.yaml",
       "extra_arguments": "--debug",
       "staging_directory": "/tmp/{{user `image_name`}}/",
       "manifest_file": "provisioners/{{user `image_name`}}.pp",
       "module_paths": [
-        "modules"
+        "modules",
+        "modules-extra"
       ]
     }
   ],

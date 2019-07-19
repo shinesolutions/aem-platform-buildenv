@@ -71,3 +71,6 @@ class { 'java':
 class { 'maven::maven':
   version => '3.5.0',
 }
+
+class { 'cred::puppet':
+}

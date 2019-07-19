@@ -17,3 +17,5 @@ cred::files::gpg_source: /tmp/gpg.tar.gz
 cred::google::base_dir: /root/
 cred::google::google_idp_id: ''
 cred::google::google_sp_id: ''
+
+cred::puppet::base_dir: /root/

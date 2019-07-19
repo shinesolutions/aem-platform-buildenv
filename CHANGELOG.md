@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 ### Changed
 - Upgrade Ansible to 2.8.2
+- Disable PDK analytics collection
 
 ### Fixed
 - Fix docker version tag for publisher and sandpit

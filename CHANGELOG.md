@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Specify local source for docker_image publishing due to Ansible dropping auto-detection
+
 ## 1.1.0 - 2019-08-16
 ### Changed
 - Upgrade Ansible to 2.8.2

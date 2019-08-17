@@ -19,10 +19,12 @@
       docker_image:
         name: "{{ docker.repository }}/{{ docker.image.name }}{{ images_name_suffix }}"
         tag: "{{ docker.image.version }}"
+        source: local
         push: true
 
     - name: Publish the Docker image with latest tag
       docker_image:
         name: "{{ docker.repository }}/{{ docker.image.name }}{{ images_name_suffix }}"
         tag: latest
+        source: local
         push: true

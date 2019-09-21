@@ -25,8 +25,13 @@ class { 'nodejs':
 } -> package { 'rtk':
   ensure   => '0.2.0',
   provider => 'npm',
-}
 
+# github-release-downloader is used to download GitHub release artifacts
+# from private repos, download will require oauth token
+} -> package { 'github-release-downloader':
+  ensure   => '1.2.0',
+  provider => 'npm',
+}
 
 package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker', 'jq', 'python-devel']:
   ensure   => 'present',

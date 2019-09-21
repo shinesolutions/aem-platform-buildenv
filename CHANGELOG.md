@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add github-release-downloader(grd) for downloading private GitHub repos using OAuth token
+
 ### Changed
 - Specify local source for docker_image publishing due to Ansible dropping auto-detection
 

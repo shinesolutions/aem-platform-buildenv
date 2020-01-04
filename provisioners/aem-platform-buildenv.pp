@@ -41,12 +41,12 @@ package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker', 'jq', 'python-devel']
 include pip
 pip::install { 'ansible':
   ensure         => present,
-  version        => '2.8.2',
+  version        => '2.9.2',
   python_version => '2.7',
 }
 pip::install { 'awscli':
   ensure         => present,
-  version        => '1.16.115',
+  version        => '1.16.304',
   python_version => '2.7',
 }
 

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Upgrade Ansible to 2.9.2
+- Upgrade AWS CLI to 1.16.304
+
 ## 1.2.0 - 2019-12-31
 ### Added
 - Add github-release-downloader(grd) for downloading private GitHub repos using OAuth token

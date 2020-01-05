@@ -51,7 +51,7 @@ pip::install { 'awscli':
 }
 
 class { 'hashicorp::packer':
-  version => '1.2.4',
+  version => '1.5.1',
 }
 
 archive { '/usr/local/bin/packer-post-processor-json-updater':

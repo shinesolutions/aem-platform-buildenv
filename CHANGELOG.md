@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Upgrade Ansible to 2.9.2
 - Upgrade AWS CLI to 1.16.304
+- Upgrade Packer to 1.5.1
 
 ## 1.2.0 - 2019-12-31
 ### Added

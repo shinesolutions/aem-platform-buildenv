@@ -7,3 +7,4 @@ modules
 *.retry
 stage
 modules-extra/cred/hieradata/local.yaml
+.bundle

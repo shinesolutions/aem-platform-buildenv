@@ -4,7 +4,7 @@ services:
   - docker
 install:
   - sudo apt-get install unzip
-  - wget https://releases.hashicorp.com/packer/1.2.2/packer_1.2.2_linux_amd64.zip
-  - sudo unzip -o packer_1.2.2_linux_amd64.zip -d /usr/local/bin/
+  - wget https://releases.hashicorp.com/packer/1.5.1/packer_1.5.1_linux_amd64.zip
+  - sudo unzip -o packer_1.5.1_linux_amd64.zip -d /usr/local/bin/
 script:
   - make ci

@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add python3.4 virtualenv on base image
+
 ## 1.3.0 - 2020-01-05
 ### Changed
 - Upgrade Ansible to 2.9.2

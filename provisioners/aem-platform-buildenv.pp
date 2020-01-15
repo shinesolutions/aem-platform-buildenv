@@ -79,3 +79,22 @@ class { 'maven::maven':
 
 class { 'cred::puppet':
 }
+
+class { 'python':
+  ensure     => 'present',
+  version    => 'python34',
+  dev        => 'present',
+  pip        => 'present',
+  virtualenv => 'present',
+}
+
+# virtualenv is used for building a python3.4 virtual envrinment
+# this venv can be awaken by activate command
+python::virtualenv { '/home/.virtualenvs':
+  ensure     => present,
+  version    => '3.4',
+  virtualenv => 'virtualenv-3.4',
+  owner      => 'root',
+  group      => 'root',
+  timeout    => 0,
+}

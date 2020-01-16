@@ -33,7 +33,7 @@ class { 'nodejs':
   provider => 'npm',
 }
 
-package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker', 'jq', 'python-devel']:
+package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker', 'jq', 'python34-devel']:
   ensure   => 'present',
   provider => 'yum',
 }
@@ -82,7 +82,6 @@ class { 'cred::puppet':
 
 class { 'python':
   ensure     => 'present',
-  version    => 'python34',
   dev        => 'present',
   pip        => 'present',
   virtualenv => 'present',
@@ -99,7 +98,6 @@ file { '/home/.virtualenvs':
 python::virtualenv { '/home/.virtualenvs/py34':
   ensure     => present,
   version    => '3.4',
-  virtualenv => 'virtualenv-3.4',
   owner      => 'root',
   group      => 'root',
   timeout    => 0,
@@ -108,7 +106,6 @@ python::virtualenv { '/home/.virtualenvs/py34':
 python::virtualenv { '/home/.virtualenvs/py27':
   ensure     => present,
   version    => '2.7',
-  virtualenv => 'virtualenv-3.4',
   owner      => 'root',
   group      => 'root',
   timeout    => 0,

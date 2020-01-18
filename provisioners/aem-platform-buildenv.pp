@@ -33,7 +33,7 @@ class { 'nodejs':
   provider => 'npm',
 }
 
-package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker', 'jq', 'python-devel']:
+package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker', 'jq', 'python34-devel']:
   ensure   => 'present',
   provider => 'yum',
 }
@@ -78,4 +78,35 @@ class { 'maven::maven':
 }
 
 class { 'cred::puppet':
+}
+
+class { 'python':
+  ensure     => 'present',
+  dev        => 'present',
+  pip        => 'present',
+  virtualenv => 'present',
+}
+
+file { '/home/.virtualenvs':
+  ensure => 'directory',
+  owner  => 'root',
+  mode   => '0755',
+}
+
+# virtualenv is used for building python virtualenvs
+# it can be awaken by activate command
+python::virtualenv { '/home/.virtualenvs/py34':
+  ensure     => present,
+  version    => '3.4',
+  owner      => 'root',
+  group      => 'root',
+  timeout    => 0,
+}
+
+python::virtualenv { '/home/.virtualenvs/py27':
+  ensure     => present,
+  version    => '2.7',
+  owner      => 'root',
+  group      => 'root',
+  timeout    => 0,
 }

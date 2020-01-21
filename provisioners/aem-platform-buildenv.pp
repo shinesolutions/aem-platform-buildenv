@@ -83,7 +83,7 @@ class { 'cred::puppet':
 class { 'python':
   ensure     => 'present',
   dev        => 'present',
-  pip        => 'present',
+  pip        => 'absent',
   virtualenv => 'present',
 }
 

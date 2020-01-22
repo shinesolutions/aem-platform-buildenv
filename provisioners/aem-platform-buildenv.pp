@@ -103,10 +103,20 @@ python::virtualenv { '/home/.virtualenvs/py34':
   timeout    => 0,
 }
 
+file_line { 'Set virtualenv alias for activating python 3.4':
+  path => "${base_dir}/.bashrc",
+  line => "alias py34='/home/.virtualenvs/py34/bin/activate'",
+}
+
 python::virtualenv { '/home/.virtualenvs/py27':
   ensure     => present,
   version    => '2.7',
   owner      => 'root',
   group      => 'root',
   timeout    => 0,
+}
+
+file_line { 'Set virtualenv alias for activating python 2.7':
+  path => "${base_dir}/.bashrc",
+  line => "alias py27='/home/.virtualenvs/py27/bin/activate'",
 }

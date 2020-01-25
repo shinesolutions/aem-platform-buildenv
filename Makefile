@@ -10,7 +10,7 @@ deps:
 	gem install bundler --version=1.17.3
 	bundle install -j4
 	r10k puppetfile install --moduledir modules --verbose
-	pip install --user -r requirements.txt
+	pip install -r requirements.txt
 
 lint:
 	yamllint \
@@ -43,5 +43,5 @@ publish-publisher:
 
 release:
 	rtk release
-	
+
 .PHONY: ci clean init deps lint docker-base docker-sandpit docker-publisher publish-base publish-sandpit release

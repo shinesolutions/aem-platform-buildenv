@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add python3.4 and python2.7 virtualenvs on base image
 
+### Changed
+- Upgrade Puppet to 5.5.18
+- Replace latest Puppet installation with specific version
+
 ## 1.3.0 - 2020-01-05
 ### Changed
 - Upgrade Ansible to 2.9.2

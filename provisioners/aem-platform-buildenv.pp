@@ -93,6 +93,12 @@ file { '/home/.virtualenvs':
   mode   => '0755',
 }
 
+file { "${base_dir}/.bashrc":
+  ensure => 'file',
+  owner  => 'root',
+  mode   => '0644',
+}
+
 # virtualenv is used for building python virtualenvs
 # it can be awaken by activate command
 python::virtualenv { '/home/.virtualenvs/py34':

@@ -102,11 +102,11 @@ file { "${base_dir}/.bashrc":
 # virtualenv is used for building python virtualenvs
 # it can be awaken by activate command
 python::virtualenv { '/home/.virtualenvs/py34':
-  ensure     => present,
-  version    => '3.4',
-  owner      => 'root',
-  group      => 'root',
-  timeout    => 0,
+  ensure  => present,
+  version => '3.4',
+  owner   => 'root',
+  group   => 'root',
+  timeout => 0,
 }
 
 file_line { 'Set virtualenv alias for activating python 3.4':
@@ -115,11 +115,11 @@ file_line { 'Set virtualenv alias for activating python 3.4':
 }
 
 python::virtualenv { '/home/.virtualenvs/py27':
-  ensure     => present,
-  version    => '2.7',
-  owner      => 'root',
-  group      => 'root',
-  timeout    => 0,
+  ensure  => present,
+  version => '2.7',
+  owner   => 'root',
+  group   => 'root',
+  timeout => 0,
 }
 
 file_line { 'Set virtualenv alias for activating python 2.7':

@@ -45,6 +45,15 @@ You can also run the command without `--rm` flag if you want to keep the contain
 
 Please note that the above image does not contain any credential. It's up to you to set up your AWS/SCM/etc credentials.
 
+Aliases
+-------
+
+| Name | Image | Description |
+|------|-------|-------------|
+| py27 | `base`, `sandpit` | Enable Python 2.7 Virtualenv |
+| py34 | `base`, `sandpit` | Enable Python 3.4 Virtualenv |
+| gsso2aws | `sandpit` | Authenticate to AWS using Google SSO |
+
 AWS ECR
 -------
 

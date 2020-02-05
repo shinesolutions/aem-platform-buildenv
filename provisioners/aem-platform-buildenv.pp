@@ -33,7 +33,7 @@ class { 'nodejs':
   provider => 'npm',
 }
 
-package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker', 'jq', 'python34-devel']:
+package { ['git', 'ShellCheck', 'unzip', 'wget', 'docker', 'jq', 'python36-devel']:
   ensure   => 'present',
   provider => 'yum',
 }
@@ -84,7 +84,7 @@ class { 'python':
   ensure     => 'present',
   dev        => 'present',
   pip        => 'absent',
-  virtualenv => 'present',
+  virtualenv => 'latest',
 }
 
 file { '/home/.virtualenvs':
@@ -101,17 +101,17 @@ file { "${base_dir}/.bashrc":
 
 # virtualenv is used for building python virtualenvs
 # it can be awaken by activate command
-python::virtualenv { '/home/.virtualenvs/py34':
+python::virtualenv { '/home/.virtualenvs/py36':
   ensure  => present,
-  version => '3.4',
+  version => '3.6',
   owner   => 'root',
   group   => 'root',
   timeout => 0,
 }
 
-file_line { 'Set virtualenv alias for activating python 3.4':
+file_line { 'Set virtualenv alias for activating python 3.6':
   path => "${base_dir}/.bashrc",
-  line => "alias py34='/home/.virtualenvs/py34/bin/activate'",
+  line => "alias py36='/home/.virtualenvs/py36/bin/activate'",
 }
 
 python::virtualenv { '/home/.virtualenvs/py27':

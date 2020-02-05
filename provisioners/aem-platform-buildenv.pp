@@ -23,7 +23,7 @@ class { 'nodejs':
 
 # rtk is used for automating repo release process (versioning, tagging)
 } -> package { 'rtk':
-  ensure   => '0.2.0',
+  ensure   => '1.0.0',
   provider => 'npm',
 
 # github-release-downloader is used to download GitHub release artifacts

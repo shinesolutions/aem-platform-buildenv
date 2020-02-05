@@ -84,7 +84,7 @@ class { 'python':
   ensure     => 'present',
   dev        => 'present',
   pip        => 'absent',
-  virtualenv => 'latest',
+  virtualenv => 'present',
 }
 
 file { '/home/.virtualenvs':

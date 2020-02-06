@@ -102,11 +102,12 @@ file { "${base_dir}/.bashrc":
 # virtualenv is used for building python virtualenvs
 # it can be awaken by activate command
 python::virtualenv { '/home/.virtualenvs/py36':
-  ensure  => present,
-  version => '3.6',
-  owner   => 'root',
-  group   => 'root',
-  timeout => 0,
+  ensure     => present,
+  version    => '3.6',
+  owner      => 'root',
+  group      => 'root',
+  distribute => false,
+  timeout    => 0,
 }
 
 file_line { 'Set virtualenv alias for activating python 3.6':

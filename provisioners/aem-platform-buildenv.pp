@@ -116,11 +116,11 @@ file_line { 'Set virtualenv alias for activating python 3.6':
 }
 
 python::virtualenv { '/home/.virtualenvs/py27':
-  ensure     => present,
-  version    => '2.7',
-  owner      => 'root',
-  group      => 'root',
-  timeout    => 0,
+  ensure  => present,
+  version => '2.7',
+  owner   => 'root',
+  group   => 'root',
+  timeout => 0,
 }
 
 file_line { 'Set virtualenv alias for activating python 2.7':

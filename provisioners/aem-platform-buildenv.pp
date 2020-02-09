@@ -110,9 +110,9 @@ python::virtualenv { '/home/.virtualenvs/py36':
   timeout    => 0,
 }
 
-file_line { 'Set virtualenv alias for activating python 3.6':
+file_line { 'Set virtualenv alias for activating the current Python 3':
   path => "${base_dir}/.bashrc",
-  line => "alias py36='/home/.virtualenvs/py36/bin/activate'",
+  line => "alias py3='/home/.virtualenvs/py36/bin/activate'",
 }
 
 python::virtualenv { '/home/.virtualenvs/py27':
@@ -123,7 +123,7 @@ python::virtualenv { '/home/.virtualenvs/py27':
   timeout => 0,
 }
 
-file_line { 'Set virtualenv alias for activating python 2.7':
+file_line { 'Set virtualenv alias for activating the current Python 2':
   path => "${base_dir}/.bashrc",
-  line => "alias py27='/home/.virtualenvs/py27/bin/activate'",
+  line => "alias py2='/home/.virtualenvs/py27/bin/activate'",
 }

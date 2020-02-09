@@ -50,8 +50,8 @@ Aliases
 
 | Name | Image | Description |
 |------|-------|-------------|
-| py27 | `base`, `sandpit` | Enable Python 2.7 Virtualenv |
-| py34 | `base`, `sandpit` | Enable Python 3.4 Virtualenv |
+| py2 | `base`, `sandpit` | Enable Python 2 (currently 2.7) Virtualenv |
+| py3 | `base`, `sandpit` | Enable Python 3 (currently 3.4) Virtualenv |
 | gsso2aws | `sandpit` | Authenticate to AWS using Google SSO |
 
 AWS ECR

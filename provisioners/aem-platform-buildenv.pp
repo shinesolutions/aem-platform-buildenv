@@ -1,3 +1,6 @@
+# TODO: move the base_dir below to a Hiera config
+$base_dir = '/root/'
+
 class { 'nodejs':
   repo_url_suffix       => '10.x',
   nodejs_package_ensure => '10.15.3',
@@ -93,12 +96,6 @@ file { '/home/.virtualenvs':
   mode   => '0755',
 }
 
-file { "${base_dir}/.bashrc":
-  ensure => 'file',
-  owner  => 'root',
-  mode   => '0644',
-}
-
 # virtualenv is used for building python virtualenvs
 # it can be awaken by activate command
 python::virtualenv { '/home/.virtualenvs/py36':
@@ -112,7 +109,7 @@ python::virtualenv { '/home/.virtualenvs/py36':
 
 file_line { 'Set virtualenv alias for activating the current Python 3':
   path => "${base_dir}/.bashrc",
-  line => "alias py3='/home/.virtualenvs/py36/bin/activate'",
+  line => "alias py3='source /home/.virtualenvs/py36/bin/activate'",
 }
 
 python::virtualenv { '/home/.virtualenvs/py27':
@@ -125,5 +122,5 @@ python::virtualenv { '/home/.virtualenvs/py27':
 
 file_line { 'Set virtualenv alias for activating the current Python 2':
   path => "${base_dir}/.bashrc",
-  line => "alias py2='/home/.virtualenvs/py27/bin/activate'",
+  line => "alias py2='source /home/.virtualenvs/py27/bin/activate'",
 }

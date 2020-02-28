@@ -9,6 +9,7 @@ package { ['libusbx-devel', 'libudev-devel']:
 include pip
 pip::install { 'aws-google-auth[u2f]':
   ensure         => present,
+  version        => '0.0.34',
   python_version => '2.7',
 # awscli 1.16.10 has requirement botocore==1.12.0, but you'll have botocore 1.11.9 which is incompatible.
 # May need to change boto3 to 1.8.6 and botocore to 1.12.0 later.

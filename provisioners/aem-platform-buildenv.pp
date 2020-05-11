@@ -80,9 +80,6 @@ class { 'maven::maven':
   version => '3.5.0',
 }
 
-class { 'cred::puppet':
-}
-
 class { 'python':
   ensure     => 'present',
   dev        => 'present',

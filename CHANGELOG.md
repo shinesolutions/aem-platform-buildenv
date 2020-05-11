@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Upgrade aws-google-auth to 0.0.34
 
+### Removed
+- Remove sandpit and publisher Docker images
+
 ## 1.6.0 - 2020-02-13
 ### Changed
 - Upgrade rtk to 1.0.0

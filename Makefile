@@ -23,25 +23,13 @@ lint:
 	shellcheck \
 		provisioners/*.sh
 
-docker-base:
+build-docker-base:
 	scripts/run-playbook-stack.sh build "${config_path}" base
 
-docker-sandpit:
-	scripts/run-playbook-stack.sh build "${config_path}" sandpit
-
-docker-publisher:
-	scripts/run-playbook-stack.sh build "${config_path}" publisher
-
-publish-base:
+publish-docker-base:
 	scripts/run-playbook-stack.sh publish "${config_path}" base
-
-publish-sandpit:
-	scripts/run-playbook-stack.sh publish "${config_path}" sandpit
-
-publish-publisher:
-	scripts/run-playbook-stack.sh publish "${config_path}" publisher
 
 release:
 	rtk release
 
-.PHONY: ci clean init deps lint docker-base docker-sandpit docker-publisher publish-base publish-sandpit release
+.PHONY: ci clean init deps lint build-docker-base publish-docker-base release

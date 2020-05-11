@@ -44,8 +44,7 @@
       "staging_directory": "/tmp/{{user `image_name`}}/",
       "manifest_file": "provisioners/{{user `image_name`}}.pp",
       "module_paths": [
-        "modules",
-        "modules-extra"
+        "modules"
       ]
     }
   ],

@@ -11,18 +11,6 @@
         path: ../../../logs/
         state: directory
 
-    - name: Create artifacts-publisher folder
-      file:
-        path: ../../../stage/artifacts-publisher
-        state: directory
-      when: image_type == 'publisher'
-
-    - name: Login to repository for AWS ECR for publling the Docker image source
-      shell: "$(aws ecr get-login --region {{ aws.region }} --no-include-email)"
-      args:
-        executable: /bin/bash
-      when: docker.repository.find('amazonaws.com')!=-1 and image_type!='base'
-
     - name: Build the docker image
       shell: "PACKER_LOG_PATH=logs/{{ docker.image.name }}-{{ image_type }}.log \
                               PACKER_LOG=1 \

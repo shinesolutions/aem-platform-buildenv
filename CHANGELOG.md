@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 ### Changed
-- Upgrade aws-google-auth to 0.0.34
+- Switch aem-platform-buildenv source to shinesolutions/the-works-buildenv
 
 ### Removed
 - Remove sandpit and publisher Docker images

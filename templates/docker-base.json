@@ -25,7 +25,8 @@
       "changes": [
         "ENV LANG en_US.UTF-8",
         "ENV TZ {{user `timezone`}}",
-        "ENV PATH /opt/puppetlabs/puppet/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        "ENV PATH /opt/puppetlabs/puppet/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "EXPOSE 4502 4503 5432 5433"
       ]
     }
   ],

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 ### Changed
 - Switch aem-platform-buildenv source to shinesolutions/the-works-buildenv
+- Upgrade Puppet to 5.5.21
 
 ### Removed
 - Remove sandpit and publisher Docker images

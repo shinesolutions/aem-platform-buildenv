@@ -1,4 +1,4 @@
-ci: clean deps lint docker-base docker-sandpit
+ci: clean deps lint build-docker-base
 
 clean:
 	rm -rf logs modules

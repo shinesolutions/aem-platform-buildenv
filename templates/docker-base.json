@@ -14,6 +14,12 @@
         "--privileged",
         "-e",
         "container=docker",
+        "-e",
+        "LANG=en_US.UTF-8",
+        "-e",
+        "LC_ALL=en_US.UTF-8",
+        "-e",
+        "LC_CTYPE=en_US.UTF-8",
         "-v",
         "/sys/fs/cgroup:/sys/fs/cgroup",
         "-d",
@@ -23,7 +29,9 @@
         "/usr/bin/bash"
       ],
       "changes": [
-        "ENV LANG en_US.UTF-8",
+        "ENV LANG UTF-8",
+        "ENV LC_ALL en_US.UTF-8",
+        "ENV LC_CTYPE en_US.UTF-8",
         "ENV TZ {{user `timezone`}}",
         "ENV PATH /opt/puppetlabs/puppet/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
         "EXPOSE 4502 4503 5432 5433"
@@ -35,6 +43,10 @@
       "type": "shell",
       "script": "provisioners/puppet.sh"
     },
+      {
+        "type": "shell",
+        "script": "provisioners/python.sh"
+      },
     {
       "type": "puppet-masterless",
       "prevent_sudo": true,

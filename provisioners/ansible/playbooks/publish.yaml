@@ -8,9 +8,14 @@
   tasks:
     - set_fact:
         images_name_suffix: "{{ '' if (image_type == 'base') else '-'+image_type }}"
+    #
+    - name: Get the current caller identity information
+      aws_caller_info:
+        region: "{{ aws.region }}"
+      register: caller_info
 
     - name: Login to repository for AWS ECR for pushing the Docker image
-      shell: "$(aws ecr get-login --region {{ aws.region }} --no-include-email)"
+      shell: "aws ecr get-login-password --region {{ aws.region }} | docker login --username AWS --password-stdin {{ caller_info.account }}.dkr.ecr.{{ aws.region }}.amazonaws.com"
       args:
         executable: /bin/bash
       when: docker.repository.find('amazonaws.com') != -1

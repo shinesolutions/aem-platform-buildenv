@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- Added new shell provisioning script `python.sh` to upgrade pip3 & install ansible
+- Added AEM OpenCloud library dependencies to aem-platform-buildenv so they are included in the docker image and don't need to be resolved
+
+### Changed
+- Upgraded Puppet to 7.9.0
+- Upgraded dependencies in requirements.txt
 
 ## 2.0.0 - 2021-03-01
 ### Changed

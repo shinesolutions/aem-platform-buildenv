@@ -58,6 +58,10 @@
       "module_paths": [
         "modules"
       ]
+    },
+    {
+      "type": "shell",
+      "inline": "rm -fr /tmp/*"
     }
   ],
   "post-processors": [

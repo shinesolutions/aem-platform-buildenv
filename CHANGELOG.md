@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added new shell provisioning script `python.sh` to upgrade pip3 & install ansible
 - Added AEM OpenCloud library dependencies to aem-platform-buildenv so they are included in the docker image and don't need to be resolved
+- Added new provisioning step to cleanup `/tmp` directory
 
 ### Changed
 - Upgraded Puppet to 7.9.0

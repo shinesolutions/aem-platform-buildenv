@@ -45,6 +45,26 @@ package { 'aws-sdk-core':
   ensure   => '3.50.0',
   provider => 'puppet_gem',
 }
+package { 'jsonlint':
+  ensure   => '0.2.0',
+  provider => 'puppet_gem',
+}
+package { 'puppet-lint':
+  ensure   => '2.3.6',
+  provider => 'puppet_gem',
+}
+package { 'r10k':
+  ensure   => '3.3.0',
+  provider => 'puppet_gem',
+}
+package { 'rubocop':
+  ensure   => '0.68.1',
+  provider => 'puppet_gem',
+}
+package { 'yaml-lint':
+  ensure   => '0.0.10',
+  provider => 'puppet_gem',
+}
 package { 'rake':
   ensure   => '12.3.3',
   provider => 'puppet_gem',

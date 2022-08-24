@@ -41,10 +41,6 @@ package { 'yamllint':
 }
 
 # Install Ruby dependencies
-package { 'bundler':
-  ensure   => '1.17.3',
-  provider => 'puppet_gem',
-}
 package { 'aws-sdk-core':
   ensure   => '3.50.0',
   provider => 'puppet_gem',
@@ -79,5 +75,9 @@ package { 'rspec':
 }
 package { 'poltergeist':
   ensure   => '1.18.1',
+  provider => 'puppet_gem',
+}
+package { 'bundler':
+  ensure   => '1.17.3',
   provider => 'puppet_gem',
 }

@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgraded Puppet to 7.9.0
 - Upgraded dependencies in requirements.txt
 - Update AWS ECR Docker login routine
+- Update PATH variable. Moving `/usr/local/sbin` before `/usr/local/bin` to find packer binary. More information https://github.com/cracklib/cracklib/issues/7
 
 ## 2.0.0 - 2021-03-01
 ### Changed

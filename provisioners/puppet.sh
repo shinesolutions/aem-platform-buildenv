@@ -17,6 +17,8 @@ else
     yum -y install "https://yum.puppetlabs.com/puppet${PUPPET_MAJOR_VERSION}/${OS_TYPE}/${OS_VERSION}/${ARCH_TYPE}/puppet-agent-${PUPPET_AGENT_VERSION}-1.${OS_TYPE}${OS_VERSION}.${ARCH_TYPE}.rpm"
 fi
 
+yum -y install https://yum.puppetlabs.com/puppet/${OS_TYPE}/${OS_VERSION}/${ARCH_TYPE}/pdk-2.5.0.0-1.${OS_TYPE}${OS_VERSION}.${ARCH_TYPE}.rpm
+
 # Info
 /opt/puppetlabs/puppet/bin/ruby --version
 /opt/puppetlabs/puppet/bin/gem --version

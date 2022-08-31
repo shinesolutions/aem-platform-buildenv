@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add installation of pdk 2.5.0
 
+### Changed
+- Upgraded Puppet to 7.18.0
+
 ## 3.0.0 - 2022-08-25
 ### Added
 - Added new shell provisioning script `python.sh` to upgrade pip3 & install ansible

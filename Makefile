@@ -24,7 +24,7 @@ lint:
 		provisioners/*.sh
 
 build-docker-base:
-	scripts/run-playbook-stack.sh build "${config_path}" base
+	PACKER_TMP_DIR=/tmp scripts/run-playbook-stack.sh build "${config_path}" base
 
 publish-docker-base:
 	scripts/run-playbook-stack.sh publish "${config_path}" base

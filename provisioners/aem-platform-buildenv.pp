@@ -53,6 +53,14 @@ package { 'puppet-lint':
   ensure   => '2.5.2',
   provider => 'puppet_gem',
 }
+package { 'faraday-net_http':
+  ensure   => '3.0.2',
+  provider => 'puppet_gem',
+}
+package { 'faraday':
+  ensure   => '2.8.1',
+  provider => 'puppet_gem',
+}
 package { 'r10k':
   ensure   => '3.15.1',
   provider => 'puppet_gem',
@@ -70,15 +78,23 @@ package { 'rake':
   provider => 'puppet_gem',
 }
 package { 'ruby_aem':
-  ensure   => '3.13.1',
+  ensure   => '3.16.1',
   provider => 'puppet_gem',
 }
 package { 'ruby_aem_aws':
-  ensure   => '2.2.1',
+  ensure   => '3.0.0',
+  provider => 'puppet_gem',
+}
+package { 'nori':
+  ensure   => '2.6.0',
   provider => 'puppet_gem',
 }
 package { 'inspec':
   ensure   => '1.51.6',
+  provider => 'puppet_gem',
+}
+package { 'nokogiri':
+  ensure   => '1.15.6',
   provider => 'puppet_gem',
 }
 package { 'capybara':

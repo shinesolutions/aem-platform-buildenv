@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Changed
+- Set source image to the-works-buildenv:2.0.1
+- Switched Base OS to RockyLinux (9) (inherited from 'the-works-buildenv')
+- Upgraded to PDK 2.7.1.0
+- Locked gem dependency versions for various gem packages
+- Use Shine fork of 3fs-phantomjs puppet module
 
 ## 3.2.0 - 2022-09-01
 ### Changed

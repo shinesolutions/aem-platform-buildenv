@@ -1,5 +1,5 @@
 ---
-name: 'CI'
+name: 'Publish Docker Base'
 runs:
   using: 'docker'
   image: 'Dockerfile'

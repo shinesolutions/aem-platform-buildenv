@@ -29,7 +29,15 @@ build-docker-base:
 publish-docker-base:
 	scripts/run-playbook-stack.sh publish "${config_path}" base
 
-release:
-	rtk release
+release-major:
+	rtk release --release-increment-type major
 
-.PHONY: ci clean init deps lint build-docker-base publish-docker-base release
+release-minor:
+	rtk release --release-increment-type minor
+
+release-patch:
+	rtk release --release-increment-type patch
+
+release: release-minor
+
+.PHONY: ci clean init deps lint build-docker-base publish-docker-base release release-major release-minor release-patch

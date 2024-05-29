@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 ### Changed
+- Add GitHub workflows and rtk make targets
 - Set source image to the-works-buildenv:2.0.1
 - Switched Base OS to RockyLinux (9) (inherited from 'the-works-buildenv')
 - Upgraded to PDK 2.7.1.0

@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
         with:
-          ref: main
+          ref: 4.0.1
       - uses: ./.github/actions/publish-docker-base-action
         env:
           SHINEOPENSOURCE_DOCKERHUB_TOKEN: ${{ secrets.SHINEOPENSOURCE_DOCKERHUB_TOKEN }}

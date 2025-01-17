@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 ### Changed
 - Set source image to the-works-buildenv:2.0.2
+- Locked gem dependency versions for various gem packages
 
 ## 4.0.1 - 2024-05-31
 

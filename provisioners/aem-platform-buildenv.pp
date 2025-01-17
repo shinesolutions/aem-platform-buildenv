@@ -85,16 +85,28 @@ package { 'ruby_aem_aws':
   ensure   => '3.0.0',
   provider => 'puppet_gem',
 }
+package { 'nokogiri':
+  ensure   => '1.15.6',
+  provider => 'puppet_gem',
+}
 package { 'nori':
   ensure   => '2.6.0',
   provider => 'puppet_gem',
 }
-package { 'inspec':
-  ensure   => '1.51.6',
+package { 'winrm':
+  ensure   => '2.3.6',
   provider => 'puppet_gem',
 }
-package { 'nokogiri':
-  ensure   => '1.15.6',
+package { 'public_suffix':
+  ensure   => '5.1.1',
+  provider => 'puppet_gem',
+}
+package { 'train':
+  ensure   => '0.32.0',
+  provider => 'puppet_gem',
+}
+package { 'inspec':
+  ensure   => '1.51.6',
   provider => 'puppet_gem',
 }
 package { 'capybara':

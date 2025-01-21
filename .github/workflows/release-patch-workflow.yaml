@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: ./.github/actions/release-patch-action
-      - uses: ad-m/github-push-action@master
+      - uses: ad-m/github-push-action@v0.8.0
         with:
           tags: true
           github_token: ${{ secrets.SHINEOPENSOURCE_GITHUB_TOKEN }}

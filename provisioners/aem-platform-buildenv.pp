@@ -102,11 +102,11 @@ package { 'public_suffix':
   provider => 'puppet_gem',
 }
 package { 'train':
-  ensure   => '0.32.0',
+  ensure   => '0.31.0',
   provider => 'puppet_gem',
 }
 package { 'inspec':
-  ensure   => '1.51.6',
+  ensure   => '1.50.0',
   provider => 'puppet_gem',
 }
 package { 'capybara':

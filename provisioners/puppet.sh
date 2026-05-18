@@ -19,6 +19,8 @@ fi
 
 yum -y install https://yum.puppetlabs.com/puppet/${OS_TYPE}/${OS_VERSION}/${ARCH_TYPE}/pdk-2.7.1.0-1.${OS_TYPE}${OS_VERSION}.${ARCH_TYPE}.rpm
 
+yum -y install libffi-devel
+
 # Info
 /opt/puppetlabs/puppet/bin/ruby --version
 /opt/puppetlabs/puppet/bin/gem --version

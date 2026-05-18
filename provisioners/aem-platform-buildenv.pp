@@ -105,8 +105,16 @@ package { 'train':
   ensure   => '0.31.0',
   provider => 'puppet_gem',
 }
+package { 'excon':
+  ensure   => '1.2.5',
+  provider => 'puppet_gem',
+}
+package { 'ffi':
+  ensure   => '1.17.4',
+  provider => 'puppet_gem',
+}
 package { 'inspec':
-  ensure   => '1.50.0',
+  ensure   => '1.51.6',
   provider => 'puppet_gem',
 }
 package { 'capybara':

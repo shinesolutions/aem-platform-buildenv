@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Add libffi-devel for installing fiddle ruby dep
-- Pin train to 0.31.0 and inspec to 1.50.0 in order to support existing Ruby
+- Pin train, excon, and ffi to support existing Ruby
 
 ## 4.0.2 - 2025-01-21
 ### Changed

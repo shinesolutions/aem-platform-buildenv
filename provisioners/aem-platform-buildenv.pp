@@ -101,8 +101,8 @@ package { 'public_suffix':
   ensure   => '5.1.1',
   provider => 'puppet_gem',
 }
-package { 'train':
-  ensure   => '0.31.0',
+package { 'mixlib-log':
+  ensure   => '3.1.2.1',
   provider => 'puppet_gem',
 }
 package { 'excon':
@@ -110,12 +110,18 @@ package { 'excon':
   provider => 'puppet_gem',
 }
 package { 'ffi':
-  ensure   => '1.17.4',
+  ensure   => '1.15.5',
   provider => 'puppet_gem',
+}
+package { 'train':
+  ensure   => '0.31.0',
+  provider => 'puppet_gem',
+  require  => Package['excon'],
 }
 package { 'inspec':
   ensure   => '1.51.6',
   provider => 'puppet_gem',
+  require  => [Package['ffi'], Package['mixlib-log']],
 }
 package { 'capybara':
   ensure   => '3.30.0',

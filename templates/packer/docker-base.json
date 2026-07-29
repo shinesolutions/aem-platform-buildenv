@@ -8,7 +8,7 @@
   "builders": [
     {
       "type": "docker",
-      "image": "shinesolutions/the-works-buildenv:2.0.2",
+      "image": "shinesolutions/the-works-buildenv:3.0.5",
       "commit": true,
       "run_command": [
         "--privileged",

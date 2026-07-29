@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add GH Actions linting
 
 ### Changed
+- Upgrade base source to shinesolutions/the-works-buildenv:3.0.5
+- Upgrade Python to 3.12
+- Upgrade system Ruby to 3.3
+- Upgrade Puppet to 8
 - Use pip-tools for managing Python dependencies
 - Restructure conf, provisioners, and templates folders
 

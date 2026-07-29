@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Use pip-tools for managing Python dependencies
+- Restructure conf, provisioners, and templates folders
 
 ### Removed
 - Remove bundler pin to 1.17.3 for Ruby 3 support

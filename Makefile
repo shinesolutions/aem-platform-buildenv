@@ -33,9 +33,9 @@ lint:
 	puppet-lint \
 		--fail-on-warnings \
 		--no-documentation-check \
-		provisioners/*.pp
+		provisioners/puppet/*.pp
 	shellcheck \
-		provisioners/*.sh
+		provisioners/shell/*.sh
 	mdl README.md
 
 build-docker-base:

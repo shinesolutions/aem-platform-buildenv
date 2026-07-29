@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgrade Puppet to 8
 - Use pip-tools for managing Python dependencies
 - Restructure conf, provisioners, and templates folders
+- Simplify GitHub Actions CI, publish, and release workflows to not use custom action
 
 ### Removed
 - Remove bundler pin to 1.17.3 for Ruby 3 support

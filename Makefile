@@ -16,6 +16,7 @@ deps:
 	r10k puppetfile install --moduledir modules --verbose
 	python3 -m venv .venv
 	$(call python_venv,python3 -m pip install -r requirements.txt)
+	$(call python_venv,pip3 install --force-reinstall --no-binary :all: cryptography cffi)
 
 deps-upgrade:
 	python3 -m venv .venv
@@ -39,10 +40,10 @@ lint:
 	mdl README.md
 
 build-docker-base:
-	PACKER_TMP_DIR=/tmp scripts/run-playbook-stack.sh build "${config_path}" base
+	$(call python_venv,PACKER_TMP_DIR=/tmp scripts/run-playbook-stack.sh build "${config_path}" base)
 
 publish-docker-base:
-	scripts/run-playbook-stack.sh publish "${config_path}" base
+	$(call python_venv,scripts/run-playbook-stack.sh publish "${config_path}" base)
 
 release-major:
 	rtk release --release-increment-type major

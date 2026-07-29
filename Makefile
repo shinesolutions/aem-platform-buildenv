@@ -35,6 +35,7 @@ lint:
 		provisioners/*.pp
 	shellcheck \
 		provisioners/*.sh
+	mdl README.md
 
 build-docker-base:
 	PACKER_TMP_DIR=/tmp scripts/run-playbook-stack.sh build "${config_path}" base

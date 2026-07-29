@@ -29,6 +29,7 @@ lint:
 	$(call python_venv,yamllint \
 		conf/ansible/inventory/group_vars/*.yaml \
 		provisioners/ansible/playbooks/*.yaml)
+	$(call python_venv,actionlint -shellcheck= .github/workflows/*.yaml)
 	puppet-lint \
 		--fail-on-warnings \
 		--no-documentation-check \

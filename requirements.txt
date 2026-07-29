@@ -4,6 +4,8 @@
 #
 #    pip-compile
 #
+actionlint-py==1.7.12.24
+    # via -r requirements.in
 ansible==14.2.0
     # via -r requirements.in
 ansible-core==2.21.2

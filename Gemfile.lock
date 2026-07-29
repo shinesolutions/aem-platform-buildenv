@@ -1,48 +1,108 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    colored2 (3.1.2)
-    cri (2.15.6)
-    faraday (0.14.0)
-      multipart-post (>= 1.2, < 3)
-    faraday_middleware (0.12.2)
-      faraday (>= 0.7.4, < 1.0)
-    fast_gettext (1.1.2)
-    gettext (3.2.9)
+    base64 (0.3.0)
+    colored2 (4.0.3)
+    cri (2.15.12)
+    erubi (1.13.1)
+    faraday (2.14.3)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-follow_redirects (0.5.0)
+      faraday (>= 1, < 3)
+    faraday-net_http (3.4.4)
+      net-http (~> 0.5)
+    fast_gettext (4.1.1)
+      prime
+      racc
+    fiddle (1.1.8)
+    forwardable (1.4.0)
+    gettext (3.5.2)
+      erubi
       locale (>= 2.0.5)
+      prime
+      racc
       text (>= 1.3.0)
-    gettext-setup (0.34)
-      fast_gettext (~> 1.1.0)
-      gettext (>= 3.0.2, < 3.3.0)
+    gettext-setup (1.1.1)
+      fast_gettext (>= 2.1, < 5.0)
+      gettext (~> 3.4)
       locale
-    locale (2.1.2)
+    json (2.21.1)
+    jwt (2.10.3)
+      base64
+    locale (2.1.5)
+      fiddle
     log4r (1.1.10)
-    minitar (0.9)
-    multi_json (1.14.1)
-    multipart-post (2.1.1)
-    puppet-lint (2.4.2)
-    puppet_forge (2.3.1)
-      faraday (>= 0.9.0, < 0.15.0, != 0.13.1)
-      faraday_middleware (>= 0.9.0, < 0.13.0)
-      gettext-setup (~> 0.11)
-      minitar
+    logger (1.7.0)
+    minitar (1.1.0)
+    multi_json (1.21.1)
+    net-http (0.9.1)
+      uri (>= 0.11.1)
+    prime (0.1.4)
+      forwardable
+      singleton
+    puppet-lint (5.1.1)
+    puppet_forge (6.2.0)
+      base64 (>= 0.2.0, < 0.4.0)
+      faraday (~> 2.0)
+      faraday-follow_redirects (>= 0.3, < 0.6)
+      minitar (~> 1.0, >= 1.0.2)
       semantic_puppet (~> 1.0)
-    r10k (3.4.0)
-      colored2 (= 3.1.2)
-      cri (= 2.15.6)
-      gettext-setup (~> 0.24)
+    r10k (5.0.3)
+      colored2 (~> 4.0)
+      cri (>= 2.15.10)
+      gettext-setup (>= 0.24, < 2.0)
+      jwt (>= 2.2.3, < 3)
       log4r (= 1.1.10)
+      minitar (>= 0.9, < 2)
       multi_json (~> 1.10)
-      puppet_forge (~> 2.3.0)
-    semantic_puppet (1.0.2)
+      puppet_forge (>= 6.1.0, < 7)
+    racc (1.8.1)
+    semantic_puppet (1.1.1)
+    singleton (0.3.0)
     text (1.3.1)
+    uri (1.1.1)
 
 PLATFORMS
+  aarch64-linux
   ruby
 
 DEPENDENCIES
   puppet-lint
   r10k
 
+CHECKSUMS
+  base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
+  bundler (4.0.17) sha256=214e21431b5665dd2f99df8a5511c6b151d7a72e8015c8b38f8b775b61cbb6c1
+  colored2 (4.0.3) sha256=63e1038183976287efc43034f5cca17fb180b4deef207da8ba78d051cbce2b37
+  cri (2.15.12) sha256=8abfe924ef53e772a8e4ee907e791d3bfcfca78bc62a5859e3b9899ba29956e5
+  erubi (1.13.1) sha256=a082103b0885dbc5ecf1172fede897f9ebdb745a4b97a5e8dc63953db1ee4ad9
+  faraday (2.14.3) sha256=1882247e6766615c8220b4392bf1d27f6ebb63d8e28267587cef1fb0bf37f278
+  faraday-follow_redirects (0.5.0) sha256=5cde93c894b30943a5d2b93c2fe9284216a6b756f7af406a1e55f211d97d10ad
+  faraday-net_http (3.4.4) sha256=0e78af151747ed1b00f33e25973b4bc220d7f16c00c39676817c8b12331eb588
+  fast_gettext (4.1.1) sha256=e8c532f6945b0dc31efb2e91366bd56630bc3ae6a05a4126937124e40366efd8
+  fiddle (1.1.8) sha256=7fa8ee3627271497f3add5503acdbc3f40b32f610fc1cf49634f083ef3f32eee
+  forwardable (1.4.0) sha256=f1cd40cc9812937980e1c76f1aa053660990a7c9b6a98fc37d945468afcce838
+  gettext (3.5.2) sha256=ada02c59aa7e9f56bd2522faedaed16421dd2f3ddb5fe28628c0be5abcbf3c74
+  gettext-setup (1.1.1) sha256=15ce653696283c9835b0ad9f02f236b9f240cb35facd3341cc62b85d42c6b667
+  json (2.21.1) sha256=13a43df75d95641443f5702dff350f237164a9d811ff0f2c2800d4d980220583
+  jwt (2.10.3) sha256=e4d9352fbc7309b1a7448c7dd713dfe4d8c47077af80759cdbed8f878ea0b484
+  locale (2.1.5) sha256=1c6803e8aa6bdb2c29e91945d095050601bf6d58474993575adf6f3b89b32ef4
+  log4r (1.1.10) sha256=9b452928c964b7c54c09aeb25ff045b5a722b387b16c9ce37cb1baec00062966
+  logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
+  minitar (1.1.0) sha256=38db0cfb6f3801017946cdcd8dc53f2cf3fd41ff752892312bf9a1639c9ea23e
+  multi_json (1.21.1) sha256=e6126a31808e3b4d19f483c775ceac34df190dffa62adfb63a165ee14ba68080
+  net-http (0.9.1) sha256=25ba0b67c63e89df626ed8fac771d0ad24ad151a858af2cc8e6a716ca4336996
+  prime (0.1.4) sha256=4d755ebf7c2994a6f3a3fee0d072063be3fff2d4042ebff6cd5eebd4747a225e
+  puppet-lint (5.1.1) sha256=1e774edbe95c67aae93974416e0d452d6b5fc2c737196a67dd7e5ab548344486
+  puppet_forge (6.2.0) sha256=9cde4841a7a6950afeb0c4fec02449931179863918c0a6e6909cb2a6c6998a0c
+  r10k (5.0.3) sha256=a76daddd8cecdc1cf0816f3d19adb23782598d373344a9de23623f601d58a68b
+  racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
+  semantic_puppet (1.1.1) sha256=15ff5b48d7f856549eb66b927a8894d3668b211970c9d7dc07dd4db57f5c7a96
+  singleton (0.3.0) sha256=83ea1bca5f4aa34d00305ab842a7862ea5a8a11c73d362cb52379d94e9615778
+  text (1.3.1) sha256=2fbbbc82c1ce79c4195b13018a87cbb00d762bda39241bb3cdc32792759dd3f4
+  uri (1.1.1) sha256=379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6
+
 BUNDLED WITH
-   1.17.3
+  4.0.17

@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Removed
+- Remove bundler pin to 1.17.3 for Ruby 3 support
+
 ## 4.1.0 - 2026-05-18
 ### Added
 - Add libffi-devel for installing fiddle ruby dep

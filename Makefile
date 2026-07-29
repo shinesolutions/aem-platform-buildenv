@@ -6,11 +6,24 @@ clean:
 init:
 	mkdir -p artifacts
 
+define python_venv
+	. .venv/bin/activate && $(1)
+endef
+
 deps:
 	gem install bundler
 	bundle install -j4
 	r10k puppetfile install --moduledir modules --verbose
-	pip install -r requirements.txt
+	python3 -m venv .venv
+	$(call python_venv,python3 -m pip install -r requirements.txt)
+
+deps-upgrade:
+	python3 -m venv .venv
+	$(call python_venv,python3 -m pip install -r requirements-dev.txt)
+	$(call python_venv,pip-compile --upgrade)
+
+rmdeps:
+	rm -rf .venv
 
 lint:
 	yamllint \

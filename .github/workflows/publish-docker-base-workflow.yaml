@@ -1,0 +1,15 @@
+name: Publish Docker Base
+'on':
+  push:
+    tags:
+      - '*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          ref: main
+      - uses: ./.github/actions/publish-docker-base-action
+        env:
+          SHINEOPENSOURCE_DOCKERHUB_TOKEN: ${{ secrets.SHINEOPENSOURCE_DOCKERHUB_TOKEN }}

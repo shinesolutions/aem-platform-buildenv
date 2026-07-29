@@ -13,6 +13,7 @@
       aws_caller_info:
         region: "{{ aws.region }}"
       register: caller_info
+      when: docker.repository.find('amazonaws.com') != -1
 
     - name: Login to repository for AWS ECR for pushing the Docker image
       shell: "aws ecr get-login-password --region {{ aws.region }} | docker login --username AWS --password-stdin {{ caller_info.account }}.dkr.ecr.{{ aws.region }}.amazonaws.com"

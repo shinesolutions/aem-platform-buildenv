@@ -1,5 +1,5 @@
 ---
-name: 'CI'
+name: 'Release Patch'
 runs:
   using: 'docker'
   image: 'Dockerfile'

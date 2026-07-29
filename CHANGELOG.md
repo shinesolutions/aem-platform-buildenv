@@ -6,11 +6,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
-### Changed
-- Simplify GitHub Actions release workflows to not use custom action
 
+## 4.1.0 - 2026-05-18
+### Added
+- Add libffi-devel for installing fiddle ruby dep
+- Pin train, excon, and ffi to support existing Ruby
+
+## 4.0.2 - 2025-01-21
+### Changed
+- Set source image to the-works-buildenv:2.0.2
+- Locked gem dependency versions for various gem packages
+
+## 4.0.1 - 2024-05-31
+
+## 4.0.0 - 2024-05-31
+### Changed
+- Add GitHub workflows and rtk make targets
+- Set source image to the-works-buildenv:2.0.1
+- Switched Base OS to RockyLinux (9) (inherited from 'the-works-buildenv')
+- Upgraded to PDK 2.7.1.0
+- Locked gem dependency versions for various gem packages
+- Use Shine fork of 3fs-phantomjs puppet module
+
+## 3.2.0 - 2022-09-01
+### Changed
+- Upgraded AOC ruby dependencies
+
+## 3.1.0 - 2022-08-31
 ### Added
 - Add installation of pdk 2.5.0
+
+### Changed
+- Upgraded Puppet to 7.18.0
 
 ## 3.0.0 - 2022-08-25
 ### Added

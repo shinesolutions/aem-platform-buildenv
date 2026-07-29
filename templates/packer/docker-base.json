@@ -41,11 +41,11 @@
   "provisioners": [
     {
       "type": "shell",
-      "script": "provisioners/puppet.sh"
+      "script": "provisioners/shell/puppet.sh"
     },
     {
       "type": "shell",
-      "script": "provisioners/python.sh"
+      "script": "provisioners/shell/python.sh"
     },
     {
       "type": "puppet-masterless",

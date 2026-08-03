@@ -16,7 +16,13 @@ deps:
 	r10k puppetfile install --moduledir modules --verbose
 	python3 -m venv .venv
 	$(call python_venv,python3 -m pip install -r requirements.txt)
-	$(call python_venv,pip3 install --force-reinstall --no-binary :all: cryptography cffi)
+
+	# Install Puppet Packer plugin
+	packer plugins install github.com/hashicorp/puppet
+
+	# Install Docker Packer plugin
+# 	dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+	packer plugins install github.com/hashicorp/docker
 
 deps-upgrade:
 	python3 -m venv .venv

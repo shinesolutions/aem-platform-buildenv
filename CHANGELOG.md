@@ -19,9 +19,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Use pip-tools for managing Python dependencies
 - Restructure conf, provisioners, and templates folders
 - Simplify GitHub Actions CI, publish, and release workflows to not use custom action
+- Upgrade Python and Ruby packages
 
 ### Removed
 - Remove bundler pin to 1.17.3 for Ruby 3 support
+- Remove Puppet provisioning to inherit version provided by source image
+- Remove Hiera since it has been deprecated by Puppet 8
 
 ## 4.1.0 - 2026-05-18
 ### Added

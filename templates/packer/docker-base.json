@@ -52,7 +52,11 @@
       "prevent_sudo": true,
       "puppet_bin_dir": "/opt/puppetlabs/bin/",
       "hiera_config_path": "conf/hiera.yaml",
-      "extra_arguments": "--debug",
+      "extra_arguments": [
+        "--debug",
+        "--include_legacy_facts",
+        "--no-strict_variables"
+      ],
       "staging_directory": "/tmp/{{user `image_name`}}/",
       "manifest_file": "provisioners/puppet/{{user `image_name`}}.pp",
       "module_paths": [

@@ -21,7 +21,6 @@ deps:
 	packer plugins install github.com/hashicorp/puppet
 
 	# Install Docker Packer plugin
-# 	dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 	packer plugins install github.com/hashicorp/docker
 
 deps-upgrade:

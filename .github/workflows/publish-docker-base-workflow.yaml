@@ -14,7 +14,7 @@ jobs:
       - uses: docker/login-action@v4
         with:
           username: shinesolutions
-          password: ${{ secrets.SHINEOPENSOURCE_GITHUB_TOKEN }}
+          password: ${{ secrets.SHINEOPENSOURCE_DOCKERHUB_TOKEN }}
       - uses: cliffano/command-docker-action@v2.1.0
         with:
           image: shinesolutions/the-works-buildenv:3.1.1

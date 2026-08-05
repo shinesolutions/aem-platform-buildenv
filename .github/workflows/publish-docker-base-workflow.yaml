@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          ref: main
+          ref: 5.0.1
       - uses: docker/login-action@v4
         with:
           username: shinesolutions

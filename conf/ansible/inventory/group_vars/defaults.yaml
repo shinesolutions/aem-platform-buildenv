@@ -4,6 +4,6 @@ docker:
   timezone: Australia/Melbourne
   image:
     name: aem-platform-buildenv
-    version: 5.0.1
+    version: 5.0.2-pre.0
 aws:
   region: overwrite-me

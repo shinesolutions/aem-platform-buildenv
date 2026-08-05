@@ -11,5 +11,5 @@ jobs:
       - uses: cliffano/command-docker-action@v2.0.0
         with:
           command: make ci
-          image: shinesolutions/the-works-buildenv:3.0.5
+          image: shinesolutions/the-works-buildenv:3.1.1
           shell: bash

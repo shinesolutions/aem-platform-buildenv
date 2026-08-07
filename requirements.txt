@@ -10,27 +10,26 @@ ansible==14.2.0
     # via -r requirements.in
 ansible-core==2.21.2
     # via ansible
-awscli==1.45.58
+awscli==1.46.0
     # via -r requirements.in
 boto==2.49.0
     # via -r requirements.in
-boto3==1.43.58
+boto3==1.43.66
     # via -r requirements.in
-botocore==1.43.58
+botocore==1.43.66
     # via
     #   -r requirements.in
-    #   awscli
     #   boto3
     #   s3transfer
 certifi==2026.7.22
     # via requests
-cffi==2.1.0
+cffi==2.1.1
     # via cryptography
 charset-normalizer==3.4.9
     # via requests
 colorama==0.4.6
     # via awscli
-cryptography==49.0.0
+cryptography==50.0.0
     # via ansible-core
 docker-py==1.10.6
     # via -r requirements.in
@@ -44,11 +43,12 @@ jinja2==3.1.6
     # via ansible-core
 jmespath==1.1.0
     # via
+    #   awscli
     #   boto3
     #   botocore
 markupsafe==3.0.3
     # via jinja2
-packaging==26.2
+packaging==26.3
     # via ansible-core
 pathspec==1.1.1
     # via yamllint
@@ -57,7 +57,9 @@ pyasn1==0.6.4
 pycparser==3.0
     # via cffi
 python-dateutil==2.9.0.post0
-    # via botocore
+    # via
+    #   awscli
+    #   botocore
 pyyaml==6.0.3
     # via
     #   ansible-core
@@ -70,9 +72,7 @@ resolvelib==1.2.1
 rsa==4.7.2
     # via awscli
 s3transfer==0.19.2
-    # via
-    #   awscli
-    #   boto3
+    # via boto3
 six==1.17.0
     # via
     #   docker-py
@@ -80,6 +80,7 @@ six==1.17.0
     #   python-dateutil
 urllib3==2.7.0
     # via
+    #   awscli
     #   botocore
     #   requests
 websocket-client==1.9.0

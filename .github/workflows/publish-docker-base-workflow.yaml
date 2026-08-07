@@ -17,7 +17,7 @@ jobs:
           password: ${{ secrets.SHINEOPENSOURCE_DOCKERHUB_TOKEN }}
       - uses: cliffano/command-docker-action@v2.1.0
         with:
-          image: shinesolutions/the-works-buildenv:3.1.1
+          image: shinesolutions/the-works-buildenv:3.2.0
           shell: bash
           extra_args: '-v ~/.docker/config.json:/root/.docker/config.json:ro'
           command: |

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Rename init script to init.sh
+- Upgrade source the-works-buildenv to 3.2.0
 
 ## 5.0.1 - 2026-08-05
 ### Fixed

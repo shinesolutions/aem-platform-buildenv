@@ -2,6 +2,9 @@
 set -o nounset
 set -o errexit
 
+# Update all base packages
+dnf -y update && dnf clean all
+
 yum -y install libffi-devel
 
 # Info

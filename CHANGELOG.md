@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add base package updates as part of init
+
 ### Changed
 - Rename init script to init.sh
 - Upgrade source the-works-buildenv to 3.2.0

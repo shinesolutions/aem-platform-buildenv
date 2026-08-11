@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add Python 3.14 (via the-works-buildenv 3.3.0)
+
+### Changed
+- Upgrade source the-works-buildenv to 3.3.0
+
 ## 5.1.0 - 2026-08-07
 ### Added
 - Add base package updates as part of init

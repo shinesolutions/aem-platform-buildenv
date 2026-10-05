@@ -20,7 +20,7 @@
                               -var 'image_name={{ docker.image.name }}' \
                               -var 'repository={{ docker.repository }}' \
                               -var 'timezone={{ docker.timezone }}' \
-                              templates/packer/docker-{{ image_type }}.json"
+                              templates/packer/docker-{{ image_type }}.pkr.hcl"
       args:
         executable: /bin/bash
         chdir: "../../../"

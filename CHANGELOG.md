@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Upgrade source the-works-buildenv to 4.0.0
 - Skip PhantomJS installation on arm64 due to lack of arm64 binaries
+- Convert Packer template from JSON to HCL
 
 ## 5.2.0 - 2026-08-11
 ### Added

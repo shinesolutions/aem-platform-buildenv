@@ -1,0 +1,35 @@
+---
+
+- name: Publish the multi-arch Docker image manifest to repository
+  hosts: all
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - set_fact:
+        images_name_suffix: "{{ '' if (image_type == 'base') else '-'+image_type }}"
+
+    - set_fact:
+        image: "{{ docker.repository }}/{{ docker.image.name }}{{ images_name_suffix }}"
+
+    - name: Get the current caller identity information
+      aws_caller_info:
+        region: "{{ aws.region }}"
+      register: caller_info
+      when: docker.repository.find('amazonaws.com') != -1
+
+    - name: Login to repository for AWS ECR for pushing the Docker image manifest
+      shell: "aws ecr get-login-password --region {{ aws.region }} | docker login --username AWS --password-stdin {{ caller_info.account }}.dkr.ecr.{{ aws.region }}.amazonaws.com"
+      args:
+        executable: /bin/bash
+      when: docker.repository.find('amazonaws.com') != -1
+
+    # Combine the per-architecture images into multi-arch version and latest tags
+    - name: Publish the multi-arch Docker image manifest with version and latest tags
+      shell: "docker buildx imagetools create \
+                --tag {{ image }}:{{ docker.image.version }} \
+                --tag {{ image }}:latest \
+                {{ image }}:{{ docker.image.version }}-amd64 \
+                {{ image }}:{{ docker.image.version }}-arm64"
+      args:
+        executable: /bin/bash

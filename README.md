@@ -8,7 +8,7 @@ AEM Platform BuildEnv is a Docker-based environment for building [AEM OpenCloud 
 
 ## Installation
 
-Pull AEM Platform BuildEnv Docker image from Docker Hub:
+Pull AEM Platform BuildEnv Docker image from Docker Hub, the image is available for `linux/amd64` and `linux/arm64` architectures (PhantomJS is only available on `linux/amd64`):
 
 ```shell
 docker pull shinesolutions/aem-platform-buildenv
@@ -26,6 +26,8 @@ cd aem-platform-buildenv
 make deps
 make build-docker-base
 ```
+
+The image is built for the host architecture by default, the architecture can be specified explicitly using `arch` (`amd64` or `arm64`), e.g. `make build-docker-base arch=arm64`.
 
 ## Usage
 

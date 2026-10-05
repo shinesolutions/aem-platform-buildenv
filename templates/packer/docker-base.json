@@ -2,13 +2,15 @@
   "variables": {
     "timezone" : null,
     "version": null,
+    "arch": null,
     "image_name": null,
     "repository": null
   },
   "builders": [
     {
       "type": "docker",
-      "image": "shinesolutions/the-works-buildenv:3.3.0",
+      "image": "shinesolutions/the-works-buildenv:4.0.0",
+      "platform": "linux/{{user `arch`}}",
       "commit": true,
       "run_command": [
         "--privileged",
@@ -80,7 +82,7 @@
     {
       "type": "docker-tag",
       "repository": "{{user `repository`}}/{{user `image_name`}}",
-      "tag": "{{user `version`}}",
+      "tag": "{{user `version`}}-{{user `arch`}}",
       "only": [
         "docker"
       ]

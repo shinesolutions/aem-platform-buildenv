@@ -3,13 +3,20 @@ name: CI
 on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        include:
+          - runner: ubuntu-24.04
+            arch: amd64
+          - runner: ubuntu-24.04-arm
+            arch: arm64
+    runs-on: ${{ matrix.runner }}
     steps:
       - uses: actions/checkout@v7
         with:
           set-safe-directory: ${{ github.workspace }}
       - uses: cliffano/command-docker-action@v2.1.0
         with:
-          command: make ci
-          image: shinesolutions/the-works-buildenv:3.2.0
+          command: make ci arch=${{ matrix.arch }}
+          image: shinesolutions/the-works-buildenv:4.0.0
           shell: bash

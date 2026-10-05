@@ -6,7 +6,14 @@ name: Publish Docker Base
       - '*'
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        include:
+          - runner: ubuntu-24.04
+            arch: amd64
+          - runner: ubuntu-24.04-arm
+            arch: arm64
+    runs-on: ${{ matrix.runner }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -17,13 +24,29 @@ jobs:
           password: ${{ secrets.SHINEOPENSOURCE_DOCKERHUB_TOKEN }}
       - uses: cliffano/command-docker-action@v2.1.0
         with:
-          image: shinesolutions/the-works-buildenv:3.2.0
+          image: shinesolutions/the-works-buildenv:4.0.0
           shell: bash
           extra_args: '-v ~/.docker/config.json:/root/.docker/config.json:ro'
           command: |
-            make clean deps lint build-docker-base &&
+            make clean deps lint build-docker-base arch=${{ matrix.arch }} &&
             cat logs/aem-platform-buildenv-base.log &&
             docker --version &&
             docker info  &&
             docker inspect shinesolutions/aem-platform-buildenv &&
-            make publish-docker-base
+            make publish-docker-base arch=${{ matrix.arch }}
+  manifest:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: docker/login-action@v4
+        with:
+          username: shinesolutions
+          password: ${{ secrets.SHINEOPENSOURCE_DOCKERHUB_TOKEN }}
+      - uses: cliffano/command-docker-action@v2.1.0
+        with:
+          image: shinesolutions/the-works-buildenv:4.0.0
+          shell: bash
+          extra_args: '-v ~/.docker/config.json:/root/.docker/config.json:ro'
+          command: |
+            make clean deps publish-docker-base-manifest

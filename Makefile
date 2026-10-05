@@ -1,3 +1,6 @@
+# Target image architecture (amd64 or arm64), defaults to the host architecture
+arch ?= $(shell uname -m | sed -e 's/x86_64/amd64/' -e 's/aarch64/arm64/')
+
 ci: clean deps lint build-docker-base
 
 clean:
@@ -45,10 +48,14 @@ lint:
 	mdl README.md
 
 build-docker-base:
-	$(call python_venv,PACKER_TMP_DIR=/tmp scripts/run-playbook-stack.sh build "${config_path}" base)
+	$(call python_venv,PACKER_TMP_DIR=/tmp scripts/run-playbook-stack.sh build "${config_path}" base "$(arch)")
 
 publish-docker-base:
-	$(call python_venv,scripts/run-playbook-stack.sh publish "${config_path}" base)
+	$(call python_venv,scripts/run-playbook-stack.sh publish "${config_path}" base "$(arch)")
+
+# Combine the per-architecture images into multi-arch version and latest tags
+publish-docker-base-manifest:
+	$(call python_venv,scripts/run-playbook-stack.sh publish-manifest "${config_path}" base)
 
 release-major:
 	rtk release --release-increment-type major
@@ -61,4 +68,4 @@ release-patch:
 
 release: release-minor
 
-.PHONY: ci clean init deps lint build-docker-base publish-docker-base release release-major release-minor release-patch
+.PHONY: ci clean init deps lint build-docker-base publish-docker-base publish-docker-base-manifest release release-major release-minor release-patch

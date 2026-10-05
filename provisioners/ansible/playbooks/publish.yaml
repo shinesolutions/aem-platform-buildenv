@@ -21,16 +21,9 @@
         executable: /bin/bash
       when: docker.repository.find('amazonaws.com') != -1
 
-    - name: Publish the Docker image with version tag
+    - name: Publish the Docker image with version and architecture tag
       docker_image:
         name: "{{ docker.repository }}/{{ docker.image.name }}{{ images_name_suffix }}"
-        tag: "{{ docker.image.version }}"
-        source: local
-        push: true
-
-    - name: Publish the Docker image with latest tag
-      docker_image:
-        name: "{{ docker.repository }}/{{ docker.image.name }}{{ images_name_suffix }}"
-        tag: latest
+        tag: "{{ docker.image.version }}-{{ image_arch }}"
         source: local
         push: true

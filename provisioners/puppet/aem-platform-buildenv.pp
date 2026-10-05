@@ -1,9 +1,12 @@
-class { '::phantomjs':
-  package_version => '2.1.1',
-  package_update  => true,
-  install_dir     => '/usr/local/bin',
-  source_dir      => '/opt',
-  timeout         => 600,
+# PhantomJS only publishes x86_64 Linux binaries, so it is not installed on arm64
+if $facts['os']['architecture'] in ['x86_64', 'amd64'] {
+  class { '::phantomjs':
+    package_version => '2.1.1',
+    package_update  => true,
+    install_dir     => '/usr/local/bin',
+    source_dir      => '/opt',
+    timeout         => 600,
+  }
 }
 
 # Install Python dependencies

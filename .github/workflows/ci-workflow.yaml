@@ -18,5 +18,5 @@ jobs:
       - uses: cliffano/command-docker-action@v2.1.0
         with:
           command: make ci arch=${{ matrix.arch }}
-          image: shinesolutions/the-works-buildenv:4.0.0
+          image: shinesolutions/the-works-buildenv:4.1.0
           shell: bash

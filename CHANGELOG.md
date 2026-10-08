@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Upgrade source the-works-buildenv to 4.1.0
+
 ## 6.0.0 - 2026-10-05
 ### Added
 - Add arm64 Docker image alongside amd64, published as multi-arch image

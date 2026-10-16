@@ -46,6 +46,7 @@ lint:
 	shellcheck \
 		provisioners/shell/*.sh
 	markdownlint-cli2 README.md
+	python3 -m json.tool .rtk.json
 
 build-docker-base:
 	$(call python_venv,PACKER_TMP_DIR=/tmp scripts/run-playbook-stack.sh build "${config_path}" base "$(arch)")

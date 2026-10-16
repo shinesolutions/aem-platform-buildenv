@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Upgrade source the-works-buildenv to 4.5.0
+
 ## 6.3.0 - 2026-10-16
 ### Changed
 - Upgrade source the-works-buildenv to 4.3.0

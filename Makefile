@@ -45,7 +45,7 @@ lint:
 		provisioners/puppet/*.pp
 	shellcheck \
 		provisioners/shell/*.sh
-	mdl README.md
+	markdownlint-cli2 README.md
 
 build-docker-base:
 	$(call python_venv,PACKER_TMP_DIR=/tmp scripts/run-playbook-stack.sh build "${config_path}" base "$(arch)")

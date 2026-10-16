@@ -32,7 +32,7 @@ variable "repository" {
 }
 
 source "docker" "base" {
-  image    = "shinesolutions/the-works-buildenv:4.2.1"
+  image    = "shinesolutions/the-works-buildenv:4.3.0"
   platform = "linux/${var.arch}"
   commit   = true
   run_command = [

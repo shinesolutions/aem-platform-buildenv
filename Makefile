@@ -45,7 +45,7 @@ lint:
 		provisioners/puppet/*.pp
 	shellcheck \
 		provisioners/shell/*.sh
-	markdownlint-cli2 README.md docs/*.md
+	markdownlint-cli2 README.md docs/*.md .github/ISSUE_TEMPLATE/*.md
 	python3 -m json.tool .rtk.json
 
 build-docker-base:

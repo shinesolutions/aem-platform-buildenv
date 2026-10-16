@@ -6,10 +6,14 @@ Check out the [example configuration files](https://github.com/shinesolutions/ae
 
 ## User configuration properties for Docker
 
-| Name              | Description                                                                                                                                                                                                                   | Required? | Default               |
-|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|-----------------------|
-| docker.timezone   | [TZ Database name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)                                                                                                                                         | Optional  | `Australia/Melbourne` |
-| docker.repository | [Docker Hub user name](https://docs.docker.com/docker-hub/repos/) or [AWS ECR URI(\<aws_account_id\>.dkr.ecr.\<region\>.amazonaws.com)](https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth) | Optional  | `shinesolutions`      |
+| Name              | Description                                                                                                                | Required? | Default               |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------|-----------|-----------------------|
+| docker.timezone   | [TZ Database name][tz-database]                                                                                            | Optional  | `Australia/Melbourne` |
+| docker.repository | [Docker Hub user name][docker-hub] or [AWS ECR URI(\<aws_account_id\>.dkr.ecr.\<region\>.amazonaws.com)][aws-ecr-registry] | Optional  | `shinesolutions`      |
+
+[tz-database]: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
+[docker-hub]: https://docs.docker.com/docker-hub/repos/
+[aws-ecr-registry]: https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth
 
 ## AWS platform type configuration properties
 

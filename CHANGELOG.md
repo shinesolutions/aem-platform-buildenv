@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 ### Changed
 - Upgrade release-action to 2.2.0
+- Upgrade source the-works-buildenv to 4.7.0
 
 ## 6.4.1 - 2026-10-16
 ### Fixed

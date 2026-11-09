@@ -1,4 +1,5 @@
 [![Build Status](https://github.com/shinesolutions/aem-platform-buildenv/workflows/CI/badge.svg)](https://github.com/shinesolutions/aem-platform-buildenv/actions?query=workflow%3ACI)
+[![Code Scanning Status](https://github.com/shinesolutions/aem-platform-buildenv/workflows/CodeQL/badge.svg)](https://github.com/shinesolutions/aem-platform-buildenv/actions?query=workflow%3ACodeQL)
 [![Docker Pulls Count](https://img.shields.io/docker/pulls/shinesolutions/aem-platform-buildenv.svg)](https://hub.docker.com/r/shinesolutions/aem-platform-buildenv/)
 [![Known Vulnerabilities](https://snyk.io/test/github/shinesolutions/aem-platform-buildenv/badge.svg)](https://snyk.io/test/github/shinesolutions/aem-platform-buildenv)
 

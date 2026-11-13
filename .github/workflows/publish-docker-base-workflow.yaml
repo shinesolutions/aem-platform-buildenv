@@ -6,6 +6,8 @@ name: Publish Docker Base
       - '*'
 jobs:
   build:
+    # Fail a hung build instead of running to GitHub's 6 hour default
+    timeout-minutes: 60
     strategy:
       matrix:
         include:
@@ -36,6 +38,7 @@ jobs:
             make publish-docker-base arch=${{ matrix.arch }}
   manifest:
     needs: build
+    timeout-minutes: 30
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7

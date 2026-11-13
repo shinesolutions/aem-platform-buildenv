@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Changed
+- Speed up CI: skip CI for release tags and same-repo pull requests, cancel superseded branch runs, and add job timeouts
+- Upgrade Ansible to 14.5.0 and pin ansible-core to 2.21.5, matching the AEM OpenCloud repos that now use this Ansible
+- Upgrade awscli to 1.46.2, boto3 and botocore to 1.43.117, and pylint to 4.1.3, matching the AEM OpenCloud repos that now use them from this image
+- Remove dnf, pip and npm caches from the image
+- Remove the PDK version check, PDK is no longer in the-works-buildenv
 
 ## 6.5.0 - 2026-11-04
 ### Changed

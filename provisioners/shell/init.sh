@@ -12,4 +12,3 @@ yum -y install libffi-devel
 /opt/puppetlabs/puppet/bin/gem --version
 /opt/puppetlabs/puppet/bin/puppet --version
 /opt/puppetlabs/puppet/bin/facter --version
-/opt/puppetlabs/pdk/bin/pdk --version

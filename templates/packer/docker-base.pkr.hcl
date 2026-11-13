@@ -92,9 +92,13 @@ build {
     ]
   }
 
+  # Also remove package manager caches left by the provisioners above, they are
+  # only needed at install time and otherwise add to every image pull
   provisioner "shell" {
     inline = [
-      "rm -fr /tmp/*"
+      "rm -fr /tmp/*",
+      "dnf clean all",
+      "rm -rf /var/cache/dnf /root/.cache /root/.npm"
     ]
   }
 

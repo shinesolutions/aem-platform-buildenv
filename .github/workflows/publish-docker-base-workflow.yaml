@@ -4,6 +4,8 @@ name: Publish Docker Base
   push:
     tags:
       - '*'
+permissions:
+  contents: read
 jobs:
   build:
     # Fail a hung build instead of running to GitHub's 6 hour default
@@ -26,7 +28,7 @@ jobs:
           password: ${{ secrets.SHINEOPENSOURCE_DOCKERHUB_TOKEN }}
       - uses: cliffano/command-docker-action@v2.1.0
         with:
-          image: shinesolutions/the-works-buildenv:4.7.0
+          image: shinesolutions/the-works-buildenv:4.8.0
           shell: bash
           extra_args: -v ~/.docker/config.json:/root/.docker/config.json:ro
           command: |
@@ -48,7 +50,7 @@ jobs:
           password: ${{ secrets.SHINEOPENSOURCE_DOCKERHUB_TOKEN }}
       - uses: cliffano/command-docker-action@v2.1.0
         with:
-          image: shinesolutions/the-works-buildenv:4.7.0
+          image: shinesolutions/the-works-buildenv:4.8.0
           shell: bash
           extra_args: -v ~/.docker/config.json:/root/.docker/config.json:ro
           command: |

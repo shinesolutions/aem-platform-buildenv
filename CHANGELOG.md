@@ -6,7 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 ### Changed
-- Speed up CI: skip CI for release tags and same-repo pull requests, cancel superseded branch runs, and add job timeouts
+- Upgrade the-works-buildenv to 4.8.0, which no longer includes PDK
+- Make the GitHub Actions workflows' GITHUB_TOKEN read-only
+- Speed up CI: skip CI for release tags, same-repo pull requests and version bump commits, cancel superseded branch runs, and add job timeouts
 - Upgrade Ansible to 14.5.0 and pin ansible-core to 2.21.5, matching the AEM OpenCloud repos that now use this Ansible
 - Upgrade awscli to 1.46.2, boto3 and botocore to 1.43.117, and pylint to 4.1.3, matching the AEM OpenCloud repos that now use them from this image
 - Remove dnf, pip and npm caches from the image

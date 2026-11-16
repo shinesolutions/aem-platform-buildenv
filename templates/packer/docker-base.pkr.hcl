@@ -32,7 +32,7 @@ variable "repository" {
 }
 
 source "docker" "base" {
-  image    = "shinesolutions/the-works-buildenv:4.7.0"
+  image    = "shinesolutions/the-works-buildenv:4.8.0"
   platform = "linux/${var.arch}"
   commit   = true
   run_command = [
@@ -92,9 +92,13 @@ build {
     ]
   }
 
+  # Also remove package manager caches left by the provisioners above, they are
+  # only needed at install time and otherwise add to every image pull
   provisioner "shell" {
     inline = [
-      "rm -fr /tmp/*"
+      "rm -fr /tmp/*",
+      "dnf clean all",
+      "rm -rf /var/cache/dnf /root/.cache /root/.npm"
     ]
   }
 

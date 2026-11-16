@@ -1,8 +1,30 @@
 ---
 name: CI
-on: [push, pull_request, workflow_dispatch]
+on:
+  # Branches only: release tags are already built by the publish workflows
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+# Cancel a branch's in-progress run when a newer commit is pushed, main
+# excepted so that every main commit keeps a complete CI result
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+permissions:
+  contents: read
 jobs:
   build:
+    # Same-repo PRs are already built by the push run on their branch, so only
+    # run for PRs from forks. Also skip the release's "Bump up to next
+    # pre-release version" commit, which only changes version strings
+    if: >-
+      (github.event_name != 'pull_request' ||
+       github.event.pull_request.head.repo.full_name != github.repository) &&
+      !startsWith(github.event.head_commit.message || '',
+                  'Bump up to next pre-release version')
+    # Fail a hung build instead of running to GitHub's 6 hour default
+    timeout-minutes: 60
     strategy:
       matrix:
         include:
@@ -18,5 +40,5 @@ jobs:
       - uses: cliffano/command-docker-action@v2.1.0
         with:
           command: make ci arch=${{ matrix.arch }}
-          image: shinesolutions/the-works-buildenv:4.7.0
+          image: shinesolutions/the-works-buildenv:4.8.0
           shell: bash

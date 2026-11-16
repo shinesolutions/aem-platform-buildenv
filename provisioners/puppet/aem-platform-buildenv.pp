@@ -10,8 +10,10 @@ if $facts['os']['architecture'] in ['x86_64', 'amd64'] {
 }
 
 # Install Python dependencies
+# The AEM OpenCloud repos use awscli, boto3, botocore and pylint from this image
+# instead of installing their own, so keep them at the versions those repos need
 package { 'awscli':
-  ensure   => '1.45.62',
+  ensure   => '1.46.2',
   provider => 'pip3',
 }
 package { 'boto':
@@ -19,11 +21,11 @@ package { 'boto':
   provider => 'pip3',
 }
 package { 'boto3':
-  ensure   => '1.43.62',
+  ensure   => '1.43.117',
   provider => 'pip3',
 }
 package { 'botocore':
-  ensure   => '1.43.62',
+  ensure   => '1.43.117',
   provider => 'pip3',
 }
 package { 'jinja2':
@@ -31,7 +33,7 @@ package { 'jinja2':
   provider => 'pip3',
 }
 package { 'pylint':
-  ensure   => '4.0.6',
+  ensure   => '4.1.3',
   provider => 'pip3',
 }
 package { 'ruamel.yaml':

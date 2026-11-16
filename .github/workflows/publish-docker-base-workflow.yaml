@@ -8,7 +8,6 @@ permissions:
   contents: read
 jobs:
   build:
-    # Fail a hung build instead of running to GitHub's 6 hour default
     timeout-minutes: 60
     strategy:
       matrix:
@@ -21,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          ref: main
+          ref: 6.6.0
       - uses: docker/login-action@v4
         with:
           username: shinesolutions

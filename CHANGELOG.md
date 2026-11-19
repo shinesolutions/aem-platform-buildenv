@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Changed
+- Upgrade certifi from 2026.7.22 to 2026.10.23, which removes the compromised emSign root CAs (GHSA-6q48-6c7w-9gw2)
+- Upgrade pyasn1 from 0.6.4 to 0.6.5 (CVE-2026-119194, CVE-2026-119195, CVE-2026-119196, CVE-2026-119197)
+- Upgrade json gem from 2.21.1 to 2.21.2 (CVE-2026-71847)
 
 ## 6.7.0 - 2026-11-19
 ### Added
